@@ -28,6 +28,6 @@ export function NoteIndex() {
     if (!notes) return <div>loading</div>
 
     return <section>
-        <NoteList notes={notes} />
+        <NoteList onRemoveNote={onRemoveNote} notes={notes} />
     </section>
 }
