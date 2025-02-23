@@ -1,3 +1,5 @@
+const { Link } = ReactRouterDOM
+
 export function MailPreview({ mail, onRemoveMail }) {
 
     const { subject, from, to, body } = mail
@@ -8,6 +10,7 @@ export function MailPreview({ mail, onRemoveMail }) {
             <td>{from}</td>
             <td>{to}</td>
             <td>{body}</td>
+            <td><Link to={`/mail/${mail.id}`}>Details</Link></td>
         </tr>
     )
 }

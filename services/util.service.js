@@ -6,6 +6,7 @@ export const utilService = {
     padNum,
     getDayName,
     getMonthName,
+    getFormatDate,
     loadFromStorage,
     saveToStorage
 }
@@ -70,4 +71,9 @@ function getMonthName(date) {
         "July", "August", "September", "October", "November", "December"
     ]
     return monthNames[date.getMonth()]
+}
+
+function getFormatDate(timestamp) {
+    const date = new Date(timestamp)
+    return date.toLocaleString()
 }

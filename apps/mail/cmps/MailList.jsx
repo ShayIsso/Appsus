@@ -5,7 +5,9 @@ export function MailList({ mails, onRemoveMail }) {
         <table>
             <tbody className="mail-list">
                     {mails.map(mail =>
-                            <MailPreview key={mail.id} mail={mail} onRemoveMail={onRemoveMail}/>)}
+                            <MailPreview key={mail.id} mail={mail} onRemoveMail={onRemoveMail}/>
+                        )
+                            }
             </tbody>
         </table>
     )
