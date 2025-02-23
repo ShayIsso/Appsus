@@ -1,0 +1,46 @@
+.container-about {
+    text-align: center;
+    padding: 3.125rem 1.25rem;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 3.125rem;
+}
+
+.member {
+    text-align: center;
+    max-width: 300px;
+}
+
+.member-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 5px;
+    background: conic-gradient(
+        var(--gog-red) 0deg 140deg,    
+        var(--gog-ylo) 140deg 170deg,  
+        var(--gog-grn) 170deg 260deg,  
+        var(--gog-blu) 260deg 360deg    
+    );
+    
+}
+.member-name {
+    margin-top: 1.1rem;
+    font-size: 1.25rem;
+    font-style: italic;
+
+}
+
+.member-overview {
+    font-size: .8rem;
+    color: var(--gray4);
+    max-width: 250px;
+    margin: .25rem auto;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    text-wrap: balance;
+}
