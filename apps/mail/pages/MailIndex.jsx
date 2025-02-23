@@ -11,10 +11,23 @@ export function MailIndex() {
             .then(setMails)
     }, [])
 
+    function onRemoveMail(mailId) {
+        mailService.remove(mailId)
+            .then(() => {
+                setMails(mails =>
+                    mails.filter(mail => mail.id !== mailId))
+                showSuccessMsg(`Mail (${mailId}) removed successfully!`)
+            })
+            .catch(err => {
+                console.log('Problems removing mail:', err)
+                showErrorMsg(`Having problems removing mail!`)
+            })
+    }
+
     if (!mails) return <div>Loading...</div>
     return (
         <section className="container">
-            <MailList mails={mails}/>
+            <MailList mails={mails} onRemoveMail={onRemoveMail} />
         </section>
 
     )
