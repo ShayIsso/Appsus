@@ -4,9 +4,19 @@ export function AppHeader() {
 
     return <header className="app-header">
         <Link to="/">
-            <h3>Appsus 🐴</h3>
+            <div className="logo-container flex">
+                <img className="logo-img" src="../assets/img/appsus.png" alt="appsus" />
+                <h2 className="logo">
+                    <span>A</span>
+                    <span>p</span>
+                    <span>p</span>
+                    <span>s</span>
+                    <span>u</span>
+                    <span>s</span>
+                </h2>
+            </div>
         </Link>
-        <nav>
+        <nav className="header-nav flex">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/mail">Mail</NavLink>
