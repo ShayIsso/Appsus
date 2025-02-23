@@ -1,64 +1,71 @@
 .app-header {
-    display: flex;
-    justify-content: space-between;
-    padding: .8em;
-    background-color: var(--gray1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em;
+  background-color: var(--gray1);
 }
 
 .app-header .logo-container {
-    align-items: center;
-    gap: 5px
+  align-items: center;
+  gap: 5px;
 }
 
 .logo-img {
-    width: 45px; 
-    height: auto;
-    object-fit: contain; 
+  width: 45px;
+  height: auto;
+  object-fit: contain;
 }
 
 .app-header .logo {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
-.app-header .logo :first-child, .app-header .logo :nth-child(4){
-    color: var(--gog-blu);
+.app-header .logo :first-child,
+.app-header .logo :nth-child(4) {
+  color: var(--gog-blu);
 }
 
-.app-header .logo :last-child, .app-header .logo :nth-child(2){
-    color: var(--gog-red);
+.app-header .logo :last-child,
+.app-header .logo :nth-child(2) {
+  color: var(--gog-red);
 }
 
-.app-header .logo :nth-child(3){
-    color: var(--gog-ylo);
+.app-header .logo :nth-child(3) {
+  color: var(--gog-ylo);
 }
 
-.app-header .logo :nth-child(5){
-    color: var(--gog-grn);
+.app-header .logo :nth-child(5) {
+  color: var(--gog-grn);
 }
 
 .app-header .header-nav a {
-    color: var(--gray4);
-    margin: .5em;
-    font-size: 1.15rem;
+  color: var(--gray3);
+  margin: 0.5em;
+  font-size: 1.15rem;
+  transition: color 0.25s ease-in-out;
+}
+
+.app-header .header-nav a:hover {
+  color: var(--gray4);
 }
 
 .app-header .header-nav a.active {
-    text-decoration: underline;
-    text-underline-offset: .2em;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 .app-header .header-nav :first-child.active {
-    color: var(--gog-blu);
+  color: var(--gog-blu);
 }
 
 .app-header .header-nav :nth-child(2).active {
-    color: var(--gog-grn);
+  color: var(--gog-grn);
 }
 
 .app-header .header-nav :nth-child(3).active {
-    color: var(--gog-red);
+  color: var(--gog-red);
 }
 
 .app-header .header-nav :last-child.active {
-    color: var(--gog-ylo);
+  color: var(--gog-ylo);
 }
