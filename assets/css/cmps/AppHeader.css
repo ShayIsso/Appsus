@@ -2,7 +2,11 @@
   display: flex;
   justify-content: space-between;
   padding: 0.8em;
-  background-color: var(--gray1);
+  background: linear-gradient(135deg, var(--gray2) 0%, var(--gray1) 100%);
+}
+
+.app-header .main-nav-btn {
+  display: none;
 }
 
 .app-header .logo-container {
@@ -36,36 +40,4 @@
 
 .app-header .logo :nth-child(5) {
   color: var(--gog-grn);
-}
-
-.app-header .header-nav a {
-  color: var(--gray3);
-  margin: 0.5em;
-  font-size: 1.15rem;
-  transition: color 0.25s ease-in-out;
-}
-
-.app-header .header-nav a:hover {
-  color: var(--gray4);
-}
-
-.app-header .header-nav a.active {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
-}
-
-.app-header .header-nav :first-child.active {
-  color: var(--gog-blu);
-}
-
-.app-header .header-nav :nth-child(2).active {
-  color: var(--gog-grn);
-}
-
-.app-header .header-nav :nth-child(3).active {
-  color: var(--gog-red);
-}
-
-.app-header .header-nav :last-child.active {
-  color: var(--gog-ylo);
 }

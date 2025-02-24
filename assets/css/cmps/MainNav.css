@@ -1,0 +1,31 @@
+.main-nav a {
+  color: var(--gray3);
+  margin: 0.5em;
+  font-size: 1.15rem;
+  transition: color 0.25s ease-in-out;
+}
+
+.main-nav a:hover {
+  color: var(--gray4);
+}
+
+.main-nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.main-nav :first-child.active {
+  color: var(--gog-blu);
+}
+
+.main-nav :nth-child(2).active {
+  color: var(--gog-grn);
+}
+
+.main-nav :nth-child(3).active {
+  color: var(--gog-red);
+}
+
+.main-nav :last-child.active {
+  color: var(--gog-ylo);
+}

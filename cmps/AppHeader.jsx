@@ -1,6 +1,13 @@
-const { Link, NavLink } = ReactRouterDOM
+const { Link } = ReactRouterDOM
+
+import { MainNav } from "./MainNav.jsx"
+import { DarkScreen } from "./DarkScreen.jsx";
 
 export function AppHeader() {
+
+    function toggleMenu() {
+        document.body.classList.toggle('menu-open');
+    }
 
     return <header className="app-header">
         <Link to="/">
@@ -16,11 +23,10 @@ export function AppHeader() {
                 </h2>
             </div>
         </Link>
-        <nav className="header-nav flex">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/mail">Mail</NavLink>
-            <NavLink to="/note">Note</NavLink>
-        </nav>
+
+<DarkScreen toggleMenu={toggleMenu}  />
+<MainNav toggleMenu={toggleMenu} />
+<button className="main-nav-btn" onClick={toggleMenu}>☰</button>
+
     </header>
 }

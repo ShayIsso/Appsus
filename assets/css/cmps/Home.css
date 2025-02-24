@@ -44,27 +44,3 @@
 .home .content .keep-logo {
   width: 7.5rem;
 }
-
-@media (max-width: 750px) {
-  .home .background-circle {
-    height: 100vh;
-    top: -5%;
-    left: 60%;
-  }
-
-  .home .content h1 {
-    font-size: 2.1rem;
-  }
-
-  .home .content .appsus-logo {
-    width: 8.5rem;
-  }
-
-  .home .content .gmail-logo {
-    width: 5.5rem;
-  }
-
-  .home .content .keep-logo {
-    width: 5.5rem;
-  }
-}

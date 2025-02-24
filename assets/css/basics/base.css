@@ -23,3 +23,9 @@ video {
   width: 100%;
   object-fit: cover;
 }
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
