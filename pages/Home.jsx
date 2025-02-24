@@ -8,11 +8,11 @@ export function Home() {
             <div className="background-circle"></div>
 
             <section className="content">
-            <img className="appsus-logo"  src="/assets/img/appsus.png" alt="appsus" />
+            <img className="appsus-logo"  src="assets/img/appsus.png" alt="appsus" />
                 <h1>Welcome to Appsus</h1>
                 <div>
-                    <Link to="/mail"><img className="gmail-logo" src="/assets/img/gmail.svg" alt="gmail logo" /></Link>
-                    <Link to="/note"><img className="keep-logo" src="/assets/img/keep.svg" alt="keep logo" /></Link> 
+                    <Link to="/mail"><img className="gmail-logo" src="assets/img/gmail.svg" alt="gmail logo" /></Link>
+                    <Link to="/note"><img className="keep-logo" src="assets/img/keep.svg" alt="keep logo" /></Link> 
                 </div>
             </section>
 
