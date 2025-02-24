@@ -44,3 +44,16 @@
 .home .content .keep-logo {
   width: 7.5rem;
 }
+
+.home h1 {
+  color: var(--gray4);
+}
+
+.home a > * {
+  transition: scale ease-in-out 200ms ;
+}
+
+.home a > *:hover {
+  cursor: pointer;
+  scale: 1.2;
+}

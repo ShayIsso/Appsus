@@ -1,3 +1,4 @@
+const { Link } = ReactRouterDOM
 
 export function Home() {
     
@@ -10,8 +11,8 @@ export function Home() {
             <img className="appsus-logo"  src="../assets/img/appsus.png" alt="appsus" />
                 <h1>Welcome to Appsus</h1>
                 <div>
-                    <img className="gmail-logo" src="../assets/img/gmail.svg" alt="" />
-                    <img className="keep-logo" src="../assets/img/keep.svg" alt="" />
+                    <Link to="/mail"><img className="gmail-logo" src="../assets/img/gmail.svg" alt="gmail logo" /></Link>
+                    <Link to="/note"><img className="keep-logo" src="../assets/img/keep.svg" alt="keep logo" /></Link> 
                 </div>
             </section>
 
