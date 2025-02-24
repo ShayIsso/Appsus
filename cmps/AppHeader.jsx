@@ -12,7 +12,7 @@ export function AppHeader() {
     return <header className="app-header">
         <Link to="/">
             <div className="logo-container flex">
-                <img className="logo-img" src="../assets/img/appsus.png" alt="appsus" />
+                <img className="logo-img" src="/assets/img/appsus.png" alt="appsus" />
                 <h2 className="logo">
                     <span>A</span>
                     <span>p</span>
