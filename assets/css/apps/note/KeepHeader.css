@@ -1,0 +1,78 @@
+.keep-header {
+  border-block-end: 2px solid #ecedef;
+  font-family: Roboto, Arial, sans-serif;
+  padding: 0 0.5em;
+}
+
+.keep-header button {
+  color: #818181;
+  padding: 6px;
+  margin: 0;
+}
+
+.keep-header button:hover {
+  color: black;
+  background-color: #e9eaea;
+  border-radius: 50%;
+}
+
+.keep-header :first-child {
+  margin-right: auto;
+}
+
+.keep-header :last-child {
+  gap: 1px;
+}
+
+.keep-header .menu-btn {
+  padding: 12px;
+  margin: 0 4px;
+}
+
+.keep-header .keep-logo {
+  width: 34px;
+  height: 44px;
+  margin: 0 0 4px;
+}
+
+.keep-header .keep-title {
+  font-family: Product Sans, Arial, sans-serif;
+  font-size: 1.375em;
+  font-weight: 300;
+  color: #5f6368;
+  letter-spacing: normal;
+  line-height: 3em;
+  margin-inline-start: 18px;
+}
+
+.keep-header .search-bar {
+  display: flex;
+  align-items: center;
+
+  margin-inline-start: 100px;
+  padding: 0 5px;
+  width: 45vw;
+
+  background-color: #f1f3f4;
+  border-radius: 10px;
+}
+
+.keep-header .search-bar .search-btn {
+  margin: 3px;
+}
+
+.keep-header .search-bar input {
+  all: unset;
+  width: 100%;
+
+  font-family: Roboto, Helvetica, sans-serif, sans-serif;
+  font-size: 1.2em;
+  line-height: normal;
+
+  padding: 12px 0;
+  background-color: #f1f3f4;
+}
+
+.keep-header .search-bar .close-btn {
+  margin: 3px;
+}

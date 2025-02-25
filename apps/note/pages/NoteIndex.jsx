@@ -1,5 +1,6 @@
 import { noteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/NoteList.jsx'
+import { KeepHeader } from '../cmps/KeepHeadr.jsx'
 
 const { useEffect, useState } = React
 export function NoteIndex() {
@@ -28,6 +29,7 @@ export function NoteIndex() {
     if (!notes) return <div>loading</div>
 
     return <section>
-        <NoteList onRemoveNote={onRemoveNote} notes={notes} />
+        <KeepHeader />
+         <NoteList onRemoveNote={onRemoveNote} notes={notes} />
     </section>
 }

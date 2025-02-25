@@ -1,8 +1,18 @@
 /* SF */
 
 @font-face {
-    font-family: SF;
-    src: url('../../fonts/SF/SFPRODISPLAYBOLD.OTF');
-  }
+  font-family: SF;
+  src: url('../../fonts/SF/SFPRODISPLAYBOLD.OTF');
+}
 
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
+@font-face {
+  font-family: Roboto;
+  src: url('../../fonts/Roboto/Roboto.ttf');
+}
+
+@font-face {
+  font-family: Product Sans;
+  src: url('../../fonts/ProductSans/ProductSans.ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
