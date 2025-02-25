@@ -1,0 +1,6 @@
+.note-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 2px solid #000000;
+}

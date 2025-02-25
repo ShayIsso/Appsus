@@ -36,8 +36,8 @@ function _createNotes() {
   if (!notes || !notes.length) {
     notes = []
     notes.push(_createNote('NoteTxt'))
-    notes.push(_createNote('NoteImg'))
-    notes.push(_createNote('NoteToDos'))
+    notes.push(_createNote('NoteTxt'))
+    notes.push(_createNote('NoteTxt'))
     utilService.saveToStorage(NOTE_KEY, notes)
     console.log(' notes:', notes)
   }
@@ -76,6 +76,7 @@ function _getNote(type) {
       break
     default:
       note.info = {
+        title: utilService.makeLorem(1),
         txt: utilService.makeLorem(4),
       }
   }
