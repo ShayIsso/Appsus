@@ -1,24 +1,36 @@
 :root {
-    --bg1: #dce9fd;
-    --bg2: rgb(50, 160, 204);
-    --bg3: rgb(89, 134, 206);
-    
-    --color1: rgb(26, 115, 232);
-    --color2: rgb(24, 128, 56);
-    --color3: rgb(197, 34, 31);
+  --bg1: #dce9fd;
+  --bg2: rgb(50, 160, 204);
+  --bg3: rgb(89, 134, 206);
 
-    --gray1: #d2d2d2;
-    --gray2: #aaa;
-    --gray3: #888;
-    --gray4: #525252;
+  --color1: rgb(26, 115, 232);
+  --color2: rgb(24, 128, 56);
+  --color3: rgb(197, 34, 31);
 
-    /* logo colors */
-    --gog-blu: #4285F4;
-    --gog-red: #DB4437;
-    --gog-ylo: #F4B400;
-    --gog-grn: #0F9D58;
+  --gray1: #d2d2d2;
+  --gray2: #aaa;
+  --gray3: #888;
+  --gray4: #525252;
 
-    /* mail colors */
-    --mail-bg1: #f8fafd;
+  /* logo colors */
+  --gog-blu: #4285f4;
+  --gog-red: #db4437;
+  --gog-ylo: #f4b400;
+  --gog-grn: #0f9d58;
+
+  /* mail colors */
+  --mail-bg1: #f8fafd;
+
+  /* logo colors */
+  --gog-blu: #4285f4;
+  --gog-red: #db4437;
+  --gog-ylo: #f4b400;
+  --gog-grn: #0f9d58;
+
+  /* note colors */
+  --btn-clr: #5f6368;
+  --btn-h-bg: #e9eaea90;
+
+  --note-border: #e0e0e0;
+  --note-act-btns: #535353;
 }
-

@@ -1,19 +1,1 @@
-.note-list {
-  margin-top: 1em;
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* התאמה דינמית */
-  gap: 10px; /* רווח בין הכרטיסיות */
-}
 
-.container {
-}
-
-li,
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}

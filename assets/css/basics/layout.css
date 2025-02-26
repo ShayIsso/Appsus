@@ -1,3 +1,9 @@
 .container {
   padding: 0 1em;
 }
+.note-list {
+  margin-top: 2.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 238.4px);
+  gap: 20px;
+}
