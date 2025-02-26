@@ -1,4 +1,5 @@
 const { useEffect, useState } = React
+import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
 import { mailService } from "../services/mail.service.js";
 
@@ -26,7 +27,8 @@ export function MailIndex() {
 
     if (!mails) return <div>Loading...</div>
     return (
-        <section className="container">
+        <section className="mail-container">
+            <MailHeader />
             <MailList mails={mails} onRemoveMail={onRemoveMail} />
         </section>
 
