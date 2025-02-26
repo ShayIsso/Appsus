@@ -8,7 +8,43 @@ export function SideBar() {
                     </button>
                 </div>
             </div>
-            <h1>sidebarr</h1>
+            <div className="sidebar-icons">
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/inbox-icon.svg" alt="inbox icon" />
+                    </button>
+                </div>
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/star-icon.svg" alt="star icon" />
+                    </button>
+                </div>
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/snooze-icon.svg" alt="snooze icon" />
+                    </button>
+                </div>
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/important-icon.svg" alt="important icon" />
+                    </button>
+                </div>
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/send-icon.svg" alt="send icon" />
+                    </button>
+                </div>
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/draft-icon.svg" alt="draft icon" />
+                    </button>
+                </div>
+                <div className="sidebar-icon">
+                    <button className="icon-btn flex align-center">
+                        <img src="assets/img/sidebar_icons/label-icon.svg" alt="label icon" />
+                    </button>
+                </div>
+            </div>
         </aside>
     )
 }

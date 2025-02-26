@@ -12,7 +12,7 @@ import { MailDetails } from './apps/mail/pages/MailDetails.jsx'
 export function RootCmp() {
     return <Router>
         <section className="root-cmp">
-            <AppHeader />
+            {/* <AppHeader /> */}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
