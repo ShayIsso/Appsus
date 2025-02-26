@@ -3,7 +3,7 @@
 }
 
 .note-list {
-  margin-top: 1em;
+  margin-top: 2.5em;
   display: grid;
   grid-template-columns: repeat(auto-fill, 238.4px);
   gap: 20px;
