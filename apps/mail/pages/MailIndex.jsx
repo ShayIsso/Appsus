@@ -1,6 +1,7 @@
 const { useEffect, useState } = React
 import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
+import { SideBar } from "../cmps/SideBar.jsx";
 import { mailService } from "../services/mail.service.js";
 
 export function MailIndex() {
@@ -29,7 +30,10 @@ export function MailIndex() {
     return (
         <section className="mail-container">
             <MailHeader />
-            <MailList mails={mails} onRemoveMail={onRemoveMail} />
+            <div className="app-content-container flex">
+                <SideBar />
+                <MailList mails={mails} onRemoveMail={onRemoveMail}/>
+            </div>
         </section>
 
     )
