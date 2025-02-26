@@ -12,7 +12,7 @@ export function MailHeader() {
                     <button className="search-icon-btn">
                         <img src="assets/img/search-icon.svg" alt="search icon" />
                     </button>
-                    <input className="search-input" type="text" placeholder="Search mail" aria-label="Search mail" />
+                    <input className="search-input" type="text" placeholder="Search mail" aria-label="Search mail" spellCheck="false" autoComplete="off"/>
                     <div className="search-tools">
                         <button type="button" aria-label="Search options">
                             <img src="assets/img/search-options.svg" alt="search options" />
