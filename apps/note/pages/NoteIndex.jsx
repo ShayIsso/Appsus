@@ -28,7 +28,7 @@ export function NoteIndex() {
 
     if (!notes) return <div>loading</div>
 
-    return <section>
+    return <section className="note-index">
         <KeepHeader />
          <NoteList onRemoveNote={onRemoveNote} notes={notes} />
     </section>

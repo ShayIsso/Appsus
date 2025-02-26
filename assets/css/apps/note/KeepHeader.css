@@ -4,18 +4,6 @@
   padding: 0 0.5em;
 }
 
-.keep-header button {
-  color: #818181;
-  padding: 6px;
-  margin: 0;
-}
-
-.keep-header button:hover {
-  color: black;
-  background-color: #e9eaea;
-  border-radius: 50%;
-}
-
 .keep-header :first-child {
   margin-right: auto;
 }
