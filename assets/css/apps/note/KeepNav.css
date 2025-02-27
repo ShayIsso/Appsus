@@ -1,0 +1,28 @@
+.keep-nav {
+  grid-area: nav;
+  place-items: start;
+
+  padding-top: 8px;
+}
+
+.keep-nav button {
+  width: 100%;
+  padding: 12px 12px 12px 24px;
+}
+
+.keep-nav button:active {
+  background-color: var(--nav-active);
+}
+
+.keep-nav button:hover {
+  border-radius: 0 25px 25px 0;
+}
+
+.keep-nav span {
+  letter-spacing: 0.0178571429em;
+  font-family: Product Sans, Roboto, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 550;
+  line-height: 1.55rem;
+  margin: 0 0 0 20px;
+}

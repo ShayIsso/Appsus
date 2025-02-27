@@ -1,4 +1,5 @@
 .keep-header {
+  grid-area: header;
   border-block-end: 2px solid #ecedef;
   font-family: Roboto, Arial, sans-serif;
   padding: 0 0.5em;

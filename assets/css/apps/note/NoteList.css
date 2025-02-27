@@ -1,3 +1,7 @@
+.notes-container {
+  grid-area: main;
+}
+
 .edit-box {
   border: solid 1px var(--note-border);
   border-radius: 10px;

@@ -21,16 +21,12 @@
   /* mail colors */
   --mail-bg1: #f8fafd;
 
-  /* logo colors */
-  --gog-blu: #4285f4;
-  --gog-red: #db4437;
-  --gog-ylo: #f4b400;
-  --gog-grn: #0f9d58;
-
   /* note colors */
   --btn-clr: #5f6368;
   --btn-h-bg: #e9eaea90;
 
   --note-border: #e0e0e0;
   --note-act-btns: #535353;
+
+  --nav-active: #feefc3;
 }

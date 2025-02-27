@@ -17,6 +17,16 @@
   margin-top: 2.5em;
 }
 
-.note-container {
-  margin-left: 10rem;
+.note-list {
+  margin-left: 1rem;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav main';
+  grid-template-columns: 280px 1fr; /* ניווט ברוחב קבוע, התוכן תופס את שאר המקום */
+  grid-template-rows: 64px 1fr; /* גובה הדר קבוע */
+  height: 100vh;
 }
