@@ -1,19 +1,27 @@
-.note-list {
-  margin-top: 1em;
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(200px, 1fr)
-  ); /* התאמה דינמית */
-  gap: 10px; /* רווח בין הכרטיסיות */
+.notes-container {
+  grid-area: main;
 }
 
-.container {
+.edit-box {
+  border: solid 1px var(--note-border);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
 }
 
-li,
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.edit-box h1 {
+  padding: 12px 16px;
+
+  letter-spacing: 0.0142857143em;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  line-height: 1.25rem;
+}
+
+.edit-box section {
+  margin-top: 2px;
+  gap: 0.9em;
+  padding-right: 16px;
 }
