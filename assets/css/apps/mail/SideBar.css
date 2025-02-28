@@ -1,11 +1,26 @@
 .sidebar {
+    font-family: Product Sans, Roboto, sans-serif;
+    font-size: .875rem;
     width: 4.5rem;
     flex-direction: column;
     height: 100vh;
     position: fixed;
     background-color: var(--mail-bg1);
+    transition: width 0.25s ease;
+    overflow: hidden;
+    z-index: 100;
 }
 
+.sidebar:hover {
+    width: 16rem;
+}
+
+.sidebar-content {
+    width: 100%;
+    flex-direction: column;
+}
+
+/* Compose button styles */
 .sidebar .compose-div {
     height: 80px;
 }
@@ -19,32 +34,91 @@
 .compose-icon-btn {
     width: 3.5rem;
     height: 3.5rem;
-    justify-content: center;
     padding: 0;
     border-radius: 1rem;
     background-color: #c2e7ff;
     cursor: pointer;
+    border: none;
+    transition: width 0.25s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: .875rem;
+}
+
+.sidebar:hover .compose-icon-btn {
+    width: 8.75rem;
+    justify-content: flex-start;
+    padding-left: 1rem;
 }
 
 .compose-icon-btn img {
     display: block;
     width: 1.5rem;
     height: 1.5rem;
+    flex-shrink: 0;
 }
 
-.sidebar .sidebar-icons {
-    height: 16rem;
-    margin-bottom: 1.25rem;
+.compose-text {
+    display: none;
+    margin-left: 0.75rem;
+    color: #001d35;
 }
 
-.sidebar .sidebar-icon {
-    border-radius: 1rem;
-    margin-left: 1.25rem;
+.sidebar:hover .compose-text {
+    display: inline;
+}
+
+/* Menu items styles */
+.sidebar-menu {
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebar-icon {
+    height: 2rem;
+    border-radius: 0 1rem 1rem 0;
+    padding: 0 .25rem 0 1.25rem;
+    position: relative;
+    transition: background-color 0.25s ease;
+    cursor: pointer;
+}
+
+.sidebar-icon.active .icon-btn {
+    background-color: #d3e3fd;
+    border-radius: 50%;
     width: 2rem;
     height: 2rem;
+    flex-shrink: 0;
 }
 
-.sidebar .icon-btn {
-    margin-left: 0;
-    padding: 0 .375rem;
+.sidebar:hover .sidebar-icon.active {
+    background-color: #d3e3fd;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.sidebar-icon:hover:not(.active) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.icon-btn img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.sidebar-icon-text {
+    display: none;
+    flex-grow: 1;
+}
+
+.sidebar:hover .sidebar-icon-text {
+    display: block;
+}
+
+.unread-count {
+    display: none;
+    margin-right: 1rem;
+}
+
+.sidebar:hover .unread-count {
+    display: block;
 }
