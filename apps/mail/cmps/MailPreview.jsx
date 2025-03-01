@@ -1,10 +1,8 @@
-const { Link } = ReactRouterDOM
-
-export function MailPreview({ mail, onRemoveMail }) {
+export function MailPreview({ mail, onRemoveMail, onMailClick, }) {
 
     const { subject, from, to, body } = mail
     return (
-        <tr className="mail-preview-row flex">
+        <tr className="mail-preview-row flex" onClick={() => onMailClick(mail.id)}>
             <td className="mail-preview-select">
                 <button className="select-btn flex align-center">
                     <img src="assets/img/check-box-outline.svg" alt="checkbox" />
@@ -29,7 +27,6 @@ export function MailPreview({ mail, onRemoveMail }) {
                     <span className="mail-body">{body}</span>
                 </div>
             </td>
-            <td className="mail-preview-link"><Link to={`/mail/${mail.id}`}>Details</Link></td>
         </tr>
     )
 }

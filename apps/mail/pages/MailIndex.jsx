@@ -1,4 +1,5 @@
 const { useEffect, useState } = React
+const {  useNavigate  } = ReactRouterDOM
 
 import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
@@ -8,13 +9,18 @@ import { mailService } from "../services/mail.service.js";
 export function MailIndex() {
 
     const [mails, setMails] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         mailService.query()
             .then(setMails)
     }, [])
 
-    function onRemoveMail(mailId) {
+    function mailClick(mailId) {
+        navigate(`/mail/${mailId}`)
+    }
+
+    function removeMail(mailId) {
         mailService.remove(mailId)
             .then(() => {
                 setMails(mails =>
@@ -33,7 +39,7 @@ export function MailIndex() {
             <MailHeader />
             <div className="app-content-container flex">
                 <SideBar />
-                <MailList mails={mails} onRemoveMail={onRemoveMail}/>
+                <MailList mails={mails} onRemoveMail={removeMail} onMailClick={mailClick}/>
             </div>
         </section>
 

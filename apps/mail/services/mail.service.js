@@ -4,6 +4,7 @@ import { storageService } from '../../../services/async-storage.service.js'
 const MAIL_KEY = 'mailDB'
 
 const mail1 = {
+    id: 't6vFo5f',
     createdAt: Date.now() - 2000,
     subject: 'Get Instant Feedback on your challenges',
     body: 'Hello Shay Isso! Over the years, many users have asked for help, guidance, and insights on their challenge solutions. So today, were excited to announce our AI-powered code review feature. Were calling it Instant Feedback',
