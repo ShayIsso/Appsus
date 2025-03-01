@@ -1,4 +1,5 @@
 const { useEffect, useState } = React
+
 import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
 import { SideBar } from "../cmps/SideBar.jsx";
