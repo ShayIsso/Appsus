@@ -24,7 +24,7 @@ export function MailPreview({ mail, onRemoveMail, onMailClick, }) {
                     <div className="mail-subject-container">
                         <span className="mail-subject">{subject}</span>
                     </div>
-                    <span className="mail-body">{body}</span>
+                    <span className="mail-body"><span> - </span>{body}</span>
                 </div>
             </td>
         </tr>

@@ -63,6 +63,7 @@
     font-size: 1rem;
     color: #202124;
     outline: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 .mail-header .search-tools button {
