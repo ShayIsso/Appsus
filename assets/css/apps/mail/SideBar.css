@@ -94,6 +94,7 @@
 .sidebar:hover .sidebar-icon.active {
     background-color: #d3e3fd;
     border-radius: 0 1rem 1rem 0;
+    font-weight: bold;
 }
 
 .sidebar-icon:hover:not(.active) {
