@@ -1,5 +1,5 @@
 const { useEffect, useState } = React
-const {  useNavigate  } = ReactRouterDOM
+const { useNavigate } = ReactRouterDOM
 
 import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
@@ -18,6 +18,19 @@ export function MailIndex() {
 
     function mailClick(mailId) {
         navigate(`/mail/${mailId}`)
+    }
+
+    function toggleStarred(mailId) {
+        setMails(prevMails =>
+            prevMails.map(mail =>
+                mail.id === mailId ? { ...mail, isStarred: !mail.isStarred } : mail
+            )
+        )
+
+        const currMail = mails.find(mail => mail.id === mailId)
+
+        mailService.save({ ...currMail, isStarred: !currMail.isStarred })
+            .catch(error => console.error("Failed to save mail:", error))
     }
 
     function removeMail(mailId) {
@@ -39,7 +52,7 @@ export function MailIndex() {
             <MailHeader />
             <div className="app-content-container flex">
                 <SideBar />
-                <MailList mails={mails} onRemoveMail={removeMail} onMailClick={mailClick}/>
+                <MailList mails={mails} onRemoveMail={removeMail} onMailClick={mailClick} onToggleStarred={toggleStarred} />
             </div>
         </section>
 

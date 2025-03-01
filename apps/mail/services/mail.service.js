@@ -72,6 +72,7 @@ function getMail(from) {
         isRead: false,
         sentAt: 1551133930594,
         removedAt: null,
+        isStarred: null,
         from: from,
         to: 'user@appsus.com'
     }
