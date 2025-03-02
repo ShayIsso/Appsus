@@ -68,3 +68,29 @@
 .mail-preview-content .mail-info .mail-body > * {
     float: left;
 }
+.mail-action-wrap {
+    position: relative;
+    border-radius: 50%;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.mail-action-wrap::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2.5rem; 
+    height: 2.5rem;
+    background-color: rgba(32, 33, 36, 0.06);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.mail-action-wrap:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}

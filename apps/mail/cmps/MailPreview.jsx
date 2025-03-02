@@ -1,21 +1,31 @@
-export function MailPreview({ mail, onRemoveMail, onMailClick, }) {
+export function MailPreview({ mail, onRemoveMail, onMailClick, onToggleStarred }) {
 
-    const { subject, from, to, body } = mail
+    const { subject, from, to, body, isStarred } = mail
     return (
         <tr className="mail-preview-row flex" onClick={() => onMailClick(mail.id)}>
             <td className="mail-preview-select">
                 <button className="select-btn flex align-center">
-                    <img src="assets/img/check-box-outline.svg" alt="checkbox" />
+                    <span className="mail-action-wrap">
+                        <img src="assets/img/check-box-outline.svg" alt="checkbox" />
+                    </span>
                 </button>
             </td>
             <td className="mail-preview-star">
-                <button className="star-btn flex align-center">
-                    <img src="assets/img/sidebar_icons/star-icon.svg" alt="star icon" />
+                <button className="star-btn flex align-center"
+                    onClick={(event) => {
+                        event.stopPropagation()
+                        onToggleStarred(mail.id)
+                    }}>
+                    <span className="mail-action-wrap">
+                        <img src={`assets/img/sidebar_icons/star-icon${isStarred ? '-fill' : ''}.svg`} alt="star icon" />
+                    </span>                
                 </button>
             </td>
             <td className="mail-preview-important">
                 <button className="important-btn flex align-center">
-                    <img src="assets/img/sidebar_icons/important-icon.svg" alt="star icon" />
+                    <span className="mail-action-wrap">
+                        <img src="assets/img/sidebar_icons/important-icon.svg" alt="star icon" />
+                    </span>
                 </button>
             </td>
             <td className="mail-preview-sender flex align-center">{from}</td>
