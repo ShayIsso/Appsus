@@ -68,14 +68,13 @@
 .mail-preview-content .mail-info .mail-body > * {
     float: left;
 }
-.mail-action-btn {
+.mail-action-wrap {
     position: relative;
     border-radius: 50%;
-    padding: 4px;
     transition: background-color 0.2s ease-in-out;
 }
 
-.mail-action-btn::after {
+.mail-action-wrap::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -91,7 +90,7 @@
     pointer-events: none;
 }
 
-.mail-action-btn:hover::after {
+.mail-action-wrap:hover::after {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
