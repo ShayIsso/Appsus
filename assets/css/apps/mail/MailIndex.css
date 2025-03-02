@@ -3,6 +3,6 @@
     position: relative;
 }
 
-.app-content-container table {
+.app-content-container table, .app-content-container section{
     margin-left: 4.5rem;
 }

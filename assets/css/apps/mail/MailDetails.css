@@ -1,0 +1,59 @@
+.mail-details {
+    padding: 1.5rem 2rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.mail-details .back-btn {
+    color: var(--gray5);
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.mail-details .mail-subject {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    color: #202124;
+}
+
+.mail-details .sender-row {
+    margin-bottom: 0.5rem;
+}
+
+.mail-details .sender-name {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.mail-details .sender-email {
+    color: var(--gray5);
+    font-size: 0.875rem;
+}
+
+.mail-details .mail-date {
+    color: var(--gray5);
+    font-size: 0.75rem;
+}
+
+.mail-details .recipient-info {
+    color: var(--gray5);
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.0625rem solid #f1f3f4;
+}
+
+.mail-details .mail-content {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    padding: 0.5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+    .mail-details {
+        padding: 1rem;
+    }
+}

@@ -19,9 +19,10 @@
 @import './apps/note/KeepNav.css';
 
 @import './apps/mail/MailIndex.css';
-@import './apps/mail/MailList.css';
-@import './apps/mail/MailPreview.css';
 @import './apps/mail/MailHeader.css';
 @import './apps/mail/SideBar.css';
+@import './apps/mail/MailList.css';
+@import './apps/mail/MailPreview.css';
+@import './apps/mail/MailDetails.css';
 
 @import './setup/mq.css';

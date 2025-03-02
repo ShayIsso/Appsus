@@ -7,7 +7,6 @@ import { SideBar } from "../cmps/SideBar.jsx";
 import { mailService } from "../services/mail.service.js";
 
 export function MailIndex() {
-
     const [mails, setMails] = useState(null)
     const navigate = useNavigate()
 

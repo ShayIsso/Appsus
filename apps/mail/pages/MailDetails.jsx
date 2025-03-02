@@ -2,12 +2,13 @@ const { useParams, Link, useNavigate } = ReactRouterDOM
 
 import { mailService } from "../services/mail.service.js";
 import { utilService } from '../../../services/util.service.js'
+import { MailHeader } from "../cmps/MailHeader.jsx"
+import { SideBar } from "../cmps/SideBar.jsx"
 
 const { useEffect, useState } = React
 
 export function MailDetails() {
-
-    const [mail, setMails] = useState(null)
+    const [mail, setMail] = useState(null)
     const { mailId } = useParams()
     const navigate = useNavigate()
 
@@ -17,32 +18,46 @@ export function MailDetails() {
 
     function loadMail() {
         mailService.get(mailId)
-            .then(setMails)
+            .then(setMail)
             .catch(() => {
                 navigate(`/mail`)
             })
     }
 
+    function goBack() {
+        navigate('/mail')
+    }
+
     if (!mail) return <div>Loading...</div>
     const { subject, from, to, sentAt, body } = mail
     const formattedDate = utilService.getFormatDate(sentAt)
+    const senderName = from.split('@')[0]
+
     return (
-        <article className="mail-details">
-            <button ><Link to="/mail">Back</Link></button>
+        <section className="mail-container">
+            <MailHeader />
+            <div className="app-content-container">
+                <SideBar />
+                <section className="mail-details">
+                    <button className="back-btn flex align-center" onClick={goBack}>
+                        <span>←</span> <span>Back</span>
+                    </button>
 
-            <header className="mail-header">
-                <h2>{subject}</h2>
-                <div className="mail-meta">
-                    <span className="mail-sender"><strong>From:</strong>{from}</span>
-                    <span className="mail-recipient"><strong>To:</strong> {to}</span>
-                    <span className="mail-date">{formattedDate}</span>
-                </div>
-            </header>
+                    <h1 className="mail-subject">{subject}</h1>
 
-            <section className="mail-content">
-                <p>{body}</p>
-            </section>
+                    <div className="sender-row flex align-center space-between">
+                        <div className="sender-info flex align-center">
+                            <span className="sender-name">{senderName}</span>
+                            <span className="sender-email">&lt;{from}&gt;</span>
+                        </div>
+                        <div className="mail-date">{formattedDate}</div>
+                    </div>
 
-        </article>
+                    <div className="recipient-info">to: {to}</div>
+
+                    <div className="mail-content">{body}</div>
+                </section>
+            </div>
+        </section>
     )
 }
