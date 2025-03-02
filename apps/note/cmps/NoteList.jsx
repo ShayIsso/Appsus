@@ -5,6 +5,7 @@ export function NoteList({ notes, onRemoveNote }) {
 
     return (
         <div className="notes-container" >
+
             < section className="edit-container" >
                 <div className="edit-box flex space-between align-items justify-center">
                     <h1>Take a note...</h1>

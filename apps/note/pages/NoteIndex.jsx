@@ -4,9 +4,11 @@ import { KeepHeader } from '../cmps/KeepHeadr.jsx'
 import { KeepNav } from '../cmps/KeepNav.jsx'
 
 const { useEffect, useState } = React
+
 export function NoteIndex() {
 
     const [notes, setNotes] = useState(null)
+
 
     useEffect(() => {
         noteService.query()
@@ -31,7 +33,8 @@ export function NoteIndex() {
 
     return <section className="note-index main-layout">
         <KeepHeader />
-        <NoteList onRemoveNote={onRemoveNote} notes={notes} />
         <KeepNav />
+
+        <NoteList onRemoveNote={onRemoveNote} notes={notes} />
     </section>
 }
