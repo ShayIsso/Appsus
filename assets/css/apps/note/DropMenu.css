@@ -7,6 +7,7 @@
   padding: 6px 0;
   border-radius: 4px;
   align-items: start;
+  justify-content: start;
 
   background-color: rgb(255, 255, 255);
   box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
@@ -15,4 +16,10 @@
 
 .drop-menu > * {
   padding: 5px 10px 5px 17px;
+  width: 100%;
+}
+
+.drop-menu > *:hover {
+  background-color: var(--btn-h-bg);
+  cursor: pointer;
 }

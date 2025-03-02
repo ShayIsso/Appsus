@@ -2,7 +2,7 @@ import { noteService } from '../services/note.service.js'
 import { NoteList } from '../cmps/NoteList.jsx'
 import { KeepHeader } from '../cmps/KeepHeadr.jsx'
 import { KeepNav } from '../cmps/KeepNav.jsx'
-
+import { NoteEdit } from '../cmps/NoteEdit.jsx'
 const { useEffect, useState } = React
 
 export function NoteIndex() {
@@ -28,6 +28,9 @@ export function NoteIndex() {
             })
     }
 
+    function onAddNote(savedNote) {
+        setNotes([...notes, savedNote])
+    }
 
     if (!notes) return <div>loading</div>
 
@@ -35,6 +38,7 @@ export function NoteIndex() {
         <KeepHeader />
         <KeepNav />
 
+        <NoteEdit onAddNote={onAddNote} />
         <NoteList onRemoveNote={onRemoveNote} notes={notes} />
     </section>
 }

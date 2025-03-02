@@ -7,6 +7,7 @@ _createNotes()
 export const noteService = {
   query,
   get,
+  getEmptyNote,
   remove,
   save,
 }
@@ -31,54 +32,55 @@ function save(note) {
   }
 }
 
+// function getEmptyNote(title = '', txt = '') {
+//   return { title, txt }
+// }
+
 function _createNotes() {
   let notes = utilService.loadFromStorage(NOTE_KEY)
   if (!notes || !notes.length) {
     notes = []
-    notes.push(_createNote('NoteTxt'))
-    notes.push(_createNote('NoteTxt'))
-    notes.push(_createNote('NoteTxt'))
+    notes.push(
+      _createNote({
+        title: utilService.makeLorem(1),
+        txt: utilService.makeLorem(8),
+      })
+    )
+    notes.push(
+      _createNote({
+        title: utilService.makeLorem(1),
+        txt: utilService.makeLorem(9),
+      })
+    )
+    notes.push(
+      _createNote({
+        title: utilService.makeLorem(1),
+        txt: utilService.makeLorem(4),
+      })
+    )
+
     utilService.saveToStorage(NOTE_KEY, notes)
-    console.log(' notes:', notes)
   }
 }
 
-function _createNote(type) {
-  const note = _getNote(type)
+function _createNote(title, txt) {
+  const note = getEmptyNote(title, txt)
   note.id = utilService.makeId()
   return note
 }
 
-function _getNote(type) {
+function getEmptyNote(title = '', txt = '') {
   const note = {
     createdAt: Date.now() - 2000,
-    type,
+    type: 'txt',
     isPinned: false,
     style: {
       backgroundColor: utilService.getRandomColor(),
     },
-  }
-  switch (type) {
-    case 'NoteImg':
-      note.info = {
-        url: 'https://picsum.photos/200',
-        title: utilService.makeLorem(2),
-      }
-      break
-    case 'NoteToDos':
-      note.info = {
-        title: utilService.makeLorem(2),
-        todos: [
-          { txt: utilService.makeLorem(3), doneAt: null },
-          { txt: utilService.makeLorem(3), doneAt: 187111111 },
-        ],
-      }
-      break
-    default:
-      note.info = {
-        title: utilService.makeLorem(1),
-        txt: utilService.makeLorem(4),
-      }
+    info: {
+      title,
+      txt,
+    },
   }
 
   return note
