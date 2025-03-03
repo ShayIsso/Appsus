@@ -40,7 +40,7 @@ export function MailDetails() {
                 <SideBar />
                 <section className="mail-details">
                     <button className="back-btn flex align-center" onClick={goBack}>
-                        <span>←</span> <span>Back</span>
+                        <img src="assets/img/arrow-back.svg" alt="inbox icon" />
                     </button>
 
                     <h1 className="mail-subject">{subject}</h1>
