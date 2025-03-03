@@ -2,15 +2,20 @@
   grid-area: main;
 }
 
-.edit-box {
+.edit-container {
+  align-self: center;
   border: solid 1px var(--note-border);
   border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  width: 100%;
   max-width: 600px;
+  height: max-content;
 }
 
-.edit-box h1 {
+.edit-button {
+  width: 100%;
+}
+
+.edit-button h1 {
   padding: 12px 16px;
 
   letter-spacing: 0.0142857143em;
@@ -20,7 +25,7 @@
   line-height: 1.25rem;
 }
 
-.edit-box section {
+.edit-button section {
   margin-top: 2px;
   gap: 0.9em;
   padding-right: 16px;
