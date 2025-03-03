@@ -2,6 +2,7 @@
   position: relative;
   background-color: #fff;
   color: rgb(32, 33, 36);
+  outline-color: #202124;
   direction: ltr;
   font-family: 'Roboto', arial, sans-serif;
   font-size: 15px;
@@ -31,4 +32,32 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.note-index input {
+  all: unset;
+}
+.note-index textarea {
+  all: unset;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  resize: none;
+  min-height: 20px;
+  max-height: 300px;
+  height: max-content;
+  overflow-y: hidden; /* מונע גלילה פנימית */
+  resize: none;
+}
+
+input,
+textarea,
+select,
+button {
+  all: unset;
+  box-sizing: border-box;
+  appearance: none;
 }

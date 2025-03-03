@@ -38,7 +38,6 @@ export function NoteIndex() {
         <KeepHeader />
         <KeepNav />
 
-        <NoteEdit onAddNote={onAddNote} />
-        <NoteList onRemoveNote={onRemoveNote} notes={notes} />
+        <NoteList onAddNote={onAddNote} onRemoveNote={onRemoveNote} notes={notes} />
     </section>
 }

@@ -40,24 +40,10 @@ function _createNotes() {
   let notes = utilService.loadFromStorage(NOTE_KEY)
   if (!notes || !notes.length) {
     notes = []
-    notes.push(
-      _createNote({
-        title: utilService.makeLorem(1),
-        txt: utilService.makeLorem(8),
-      })
-    )
-    notes.push(
-      _createNote({
-        title: utilService.makeLorem(1),
-        txt: utilService.makeLorem(9),
-      })
-    )
-    notes.push(
-      _createNote({
-        title: utilService.makeLorem(1),
-        txt: utilService.makeLorem(4),
-      })
-    )
+    notes.push(_createNote(utilService.makeLorem(1), utilService.makeLorem(9)))
+    notes.push(_createNote(utilService.makeLorem(1), utilService.makeLorem(2)))
+    notes.push(_createNote(utilService.makeLorem(1), utilService.makeLorem(6)))
+    notes.push(_createNote(utilService.makeLorem(1), utilService.makeLorem(15)))
 
     utilService.saveToStorage(NOTE_KEY, notes)
   }

@@ -16,6 +16,7 @@
 @import './apps/note/NoteList.css';
 @import './apps/note/NotePreview.css';
 @import './apps/note/NoteActionBtns.css';
+@import './apps/note/NoteEdit.css';
 @import './apps/note/KeepNav.css';
 @import './apps/note/DropMenu.css';
 
