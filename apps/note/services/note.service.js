@@ -17,7 +17,9 @@ function query() {
 }
 
 function get(noteId) {
-  return storageService.get(NOTE_KEY, noteId)
+  const res = storageService.get(NOTE_KEY, noteId)
+  console.log(' res:', res)
+  return res
 }
 
 function remove(noteId) {

@@ -30,3 +30,10 @@
   grid-template-rows: 64px 1fr; /* גובה הדר קבוע */
   height: 100vh;
 }
+
+.edit-layout {
+  position: absolute;
+  top: 40%;
+  background-color: white;
+  z-index: 23;
+}

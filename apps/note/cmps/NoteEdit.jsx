@@ -1,5 +1,4 @@
-const { useParams } = ReactRouterDOM
-const { useState, useEffect } = React
+const { useState } = React
 
 import { noteService } from "../services/note.service.js";
 import { NoteActionBtns } from "./NoteActionBtns.jsx";
@@ -7,6 +6,11 @@ import { NoteActionBtns } from "./NoteActionBtns.jsx";
 export function NoteEdit({ onAddNote, setIsEdit }) {
 
     const [noteToEdit, setNoteToEdit] = useState(noteService.getEmptyNote())
+
+
+
+
+
 
     function onSaveNote(ev) {
         ev.preventDefault()
@@ -34,9 +38,14 @@ export function NoteEdit({ onAddNote, setIsEdit }) {
         <section className="note-edit">
             <form onSubmit={onSaveNote}>
 
-                <input placeholder='Title' className='title' onChange={handleChange} value={title} type="text" name="title" id="title" />
+                <input
+                    placeholder='Title'
+                    className='title'
+                    onChange={handleChange}
+                    value={title} type="text"
+                    name="title"
+                    id="title" />
 
-                {/* <input placeholder='Take a note...' className='txt' onChange={handleChange} value={txt} type="text" name="txt" id="txt" /> */}
                 <textarea
                     className='txt'
                     placeholder='Take a note...'
@@ -44,10 +53,11 @@ export function NoteEdit({ onAddNote, setIsEdit }) {
                     value={txt}
                     name="txt"
                     id="txt"
-
                 ></textarea>
+
                 <section className="flex">
-                    <NoteActionBtns /> <button className="close-btn" type="submit">Close</button>
+                    <NoteActionBtns />
+                    <button className="close-btn" type="submit">Close</button>
                 </section>
             </form>
         </ section>

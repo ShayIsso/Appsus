@@ -1,5 +1,8 @@
 .note-index {
   position: relative;
+}
+
+.note-reset {
   background-color: #fff;
   color: rgb(32, 33, 36);
   outline-color: #202124;
@@ -11,33 +14,34 @@
   padding: 0;
 }
 
-.note-index button {
+.note-reset button {
   padding: 6px;
   margin: 0;
   transition: 0.2s ease;
 }
 
-.note-index button:hover {
+.note-reset button:hover {
   background-color: var(--btn-h-bg);
-
+  cursor: pointer;
   border-radius: 50%;
 }
 
-.note-index button:hover svg {
+.note-reset button:hover svg {
   fill: black;
 }
 
-.note-index li,
+.note-reset li,
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.note-index input {
+.note-reset input {
   all: unset;
 }
-.note-index textarea {
+
+.note-reset textarea {
   all: unset;
   border: none;
   outline: none;

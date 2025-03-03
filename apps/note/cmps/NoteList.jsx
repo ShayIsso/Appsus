@@ -2,10 +2,11 @@ import { NotePreview } from './NotePreview.jsx'
 import { EditButton } from './EditButton.jsx'
 import { NoteEdit } from './NoteEdit.jsx'
 
+
 const { useState } = React
 export function NoteList({ notes, onRemoveNote, onAddNote }) {
 
-    const [isEdit, setIsEdit] = useState(true)
+    const [isEdit, setIsEdit] = useState(false)
 
     return (
         <div className="notes-container flex column" >
