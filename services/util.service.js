@@ -5,10 +5,11 @@ export const utilService = {
     getRandomColor,
     padNum,
     getDayName,
+    getDayNumber,
     getMonthName,
     getFormatDate,
     loadFromStorage,
-    saveToStorage
+    saveToStorage,
 }
 
 function saveToStorage(key, val) {
@@ -65,6 +66,9 @@ function getDayName(date, locale) {
     return date.toLocaleDateString(locale, { weekday: 'long' })
 }
 
+function getDayNumber(timestamp) {
+    return new Date(timestamp).getDate()
+}
 
 function getMonthName(date) {
     const monthNames = ["January", "February", "March", "April", "May", "June",

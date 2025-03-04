@@ -1,5 +1,5 @@
-const { Outlet } = ReactRouterDOM 
-const {  useState } = React
+const { Outlet } = ReactRouterDOM
+const { useState } = React
 
 import { MailHeader } from '../cmps/MailHeader.jsx'
 import { SideBar } from '../cmps/SideBar.jsx'

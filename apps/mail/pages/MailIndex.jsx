@@ -1,17 +1,12 @@
 const { useEffect, useState } = React
 const { useNavigate } = ReactRouterDOM
 
-import { MailCompose } from "../cmps/MailCompose.jsx";
-import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
-import { SideBar } from "../cmps/SideBar.jsx";
 import { mailService } from "../services/mail.service.js";
 
 export function MailIndex() {
     const [mails, setMails] = useState(null)
     const navigate = useNavigate()
-    const [showCompose, setShowCompose] = useState(false)
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
     useEffect(() => {
         mailService.query()
@@ -19,24 +14,32 @@ export function MailIndex() {
     }, [])
 
     function mailClick(mailId) {
-        navigate(`/mail/${mailId}`)
+        const currMail = mails.find(mail => mail.id === mailId)
+    
+        if (currMail.isRead) {
+            navigate(`/mail/${mailId}`)
+            return
+        }
+    
+        mailService.save({ ...currMail, isRead: true })
+            .then(() => navigate(`/mail/${mailId}`))
+            .catch(error => {
+                console.error("Failed to update mail as read:", error)
+                navigate(`/mail/${mailId}`)
+            })
     }
-
-    function toggleStarred(mailId) {
+    
+    function toggleStatus(mailId, statusType) {
         setMails(prevMails =>
             prevMails.map(mail =>
-                mail.id === mailId ? { ...mail, isStarred: !mail.isStarred } : mail
+                mail.id === mailId ? { ...mail, [statusType]: !mail[statusType] } : mail
             )
         )
-
+    
         const currMail = mails.find(mail => mail.id === mailId)
-
-        mailService.save({ ...currMail, isStarred: !currMail.isStarred })
-            .catch(error => console.error("Failed to save mail:", error))
-    }
-
-    function toggleSidebar() {
-        setIsSidebarOpen(prev => !prev)
+    
+        mailService.save({ ...currMail, [statusType]: !currMail[statusType] })
+            .catch(error => console.error(`Failed to save mail status: ${statusType}`, error))
     }
 
     function removeMail(mailId) {
@@ -54,7 +57,7 @@ export function MailIndex() {
 
     if (!mails) return <div>Loading...</div>
     return (
-        <MailList mails={mails} onMailClick={mailClick} onToggleStarred={toggleStarred} />
+        <MailList mails={mails} onMailClick={mailClick} onToggleStatus={toggleStatus} />
     )
 }
 
