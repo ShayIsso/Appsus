@@ -58,9 +58,9 @@ ul {
 }
 
 .note-reset input,
-textarea,
-select,
-button {
+.note-reset textarea,
+.note-reset select,
+.note-reset button {
   all: unset;
   box-sizing: border-box;
   appearance: none;
