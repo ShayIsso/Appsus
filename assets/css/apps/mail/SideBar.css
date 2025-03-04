@@ -2,15 +2,20 @@
     font-family: Roboto, Arial, sans-serif;
     font-size: .875rem;
     width: 4.5rem;
+    position: fixed;
     flex-direction: column;
     height: 100vh;
-    position: fixed;
     background-color: var(--mail-bg1);
     transition: width 0.25s ease;
     overflow: hidden;
-    z-index: 100;
+    z-index: 10;
 }
 
+.sidebar.open {
+    position: relative;
+}
+
+.sidebar.open,
 .sidebar:hover {
     width: 16rem;
 }
@@ -47,6 +52,7 @@
                 min-width .15s cubic-bezier(0.4,0,0.2,1);
 }
 
+.sidebar.open .compose-icon-btn,
 .sidebar:hover .compose-icon-btn {
     width: 8.75rem;
     justify-content: flex-start;
@@ -71,6 +77,7 @@
     color: #001d35;
 }
 
+.sidebar.open .compose-text,
 .sidebar:hover .compose-text {
     display: inline;
 }
@@ -103,6 +110,7 @@
     margin-right: 1.125rem;
 }
 
+.sidebar.open .sidebar-icon.active,
 .sidebar:hover .sidebar-icon.active {
     background-color: #d3e3fd;
     border-radius: 0 1rem 1rem 0;
@@ -123,6 +131,7 @@
     flex-grow: 1;
 }
 
+.sidebar.open .sidebar-icon-text,
 .sidebar:hover .sidebar-icon-text {
     display: block;
 }
@@ -132,6 +141,7 @@
     margin-right: 1rem;
 }
 
+.sidebar.open .unread-count,
 .sidebar:hover .unread-count {
     display: block;
 }

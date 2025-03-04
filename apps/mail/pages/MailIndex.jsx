@@ -11,6 +11,7 @@ export function MailIndex() {
     const [mails, setMails] = useState(null)
     const navigate = useNavigate()
     const [showCompose, setShowCompose] = useState(false)
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
     useEffect(() => {
         mailService.query()
@@ -34,6 +35,10 @@ export function MailIndex() {
             .catch(error => console.error("Failed to save mail:", error))
     }
 
+    function toggleSidebar() {
+        setIsSidebarOpen(prev => !prev)
+    }
+
     function removeMail(mailId) {
         mailService.remove(mailId)
             .then(() => {
@@ -50,9 +55,9 @@ export function MailIndex() {
     if (!mails) return <div>Loading...</div>
     return (
         <section className="mail-container">
-            <MailHeader />
-            <div className="app-content-container flex">
-                <SideBar onComposeClick={() => setShowCompose(true)} />
+            <MailHeader onMenuClick={toggleSidebar} />
+            <div className={`app-content-container flex ${isSidebarOpen ? '' : 'with-margin'}`}>
+                <SideBar onComposeClick={() => setShowCompose(true)} isOpen={isSidebarOpen}  />
                 <MailList mails={mails} onMailClick={mailClick} onToggleStarred={toggleStarred} />
                 {showCompose && <MailCompose onClose={() => setShowCompose(false)} />}
             </div>

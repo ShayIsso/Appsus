@@ -1,8 +1,8 @@
-export function MailHeader() {
+export function MailHeader({ onMenuClick }) {
     return (
         <header className="mail-header flex">
             <section className="header-logo-section flex align-center">
-                <div className="hamburger">
+                <div className="hamburger" onClick={onMenuClick}>
                     <svg focusable="false" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
                 </div>
                 <img className="gmail-logo" src="assets/img/full_logo_gmail.png" alt="gmail logo" />

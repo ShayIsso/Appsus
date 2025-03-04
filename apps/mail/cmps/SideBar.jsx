@@ -1,8 +1,7 @@
-export function SideBar({ onComposeClick }) {
+export function SideBar({ isOpen, onComposeClick }) {
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
             <div className="sidebar-content flex">
-                {/* Compose button */}
                 <div className="compose-div">
                     <div className="compose-btn-container">
                         <button
@@ -15,7 +14,6 @@ export function SideBar({ onComposeClick }) {
                 </div>
 
                 <div className="sidebar-menu flex">
-                    {/* Menu items */}
                     <div className="sidebar-icon flex align-center active">
                         <button className="icon-btn flex align-center justify-center">
                             <img src="assets/img/sidebar_icons/inbox-icon.svg" alt="inbox icon" />

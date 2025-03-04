@@ -1,8 +1,4 @@
  /* mail index  */
-.app-content-container {
-    position: relative;
-}
-
-.app-content-container table, .app-content-container section{
+.app-content-container.with-margin table, .app-content-container.with-margin section {
     margin-left: 4.5rem;
 }

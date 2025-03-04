@@ -3,6 +3,11 @@ import { storageService } from '../../../services/async-storage.service.js'
 
 const MAIL_KEY = 'mailDB'
 
+const loggedinUser = {
+    email: 'mrsuso7@gmail.com',
+    fullname: 'App Suso'
+}
+
 const demoMails = [
     {
         id: utilService.makeId(),
@@ -105,7 +110,7 @@ function getEmptyMail() {
         isRead: null,
         sentAt: null,
         isStared: null,
-        from: 'shayisso@gmail.com',
+        from: loggedinUser.email,
         to: ''
     }
 }

@@ -6,12 +6,9 @@ export function MailCompose({ onClose }) {
     const [mailToCompose, setMailCompose] = useState(mailService.getEmptyMail())
     const [isExpanded, setIsExpanded] = useState(false)
 
-    console.log(mailToCompose)
-    
     function onSave(ev) {
         ev.preventDefault()
         mailToCompose.sentAt = Date.now()
-        console.log(mailToCompose)
 
         mailService.save(mailToCompose)
             .then(() => console.log('Mail has successfully sent!'))
@@ -36,31 +33,32 @@ export function MailCompose({ onClose }) {
         setMailCompose(prevMail => ({ ...prevMail, [prop]: value }))
     }
 
-    const {  to, subject, body } = mailToCompose
+    const { to, subject, body } = mailToCompose
 
 
     return (
-        <article className={`mail-compose ${isExpanded ? "expanded" : ""}`}>
-            <div className="compose-header flex align-center space-between">
-                <span>New Message</span>
-                <div className="compose-actions">
-                    <button onClick={() => setIsExpanded(!isExpanded)}>
-                        <img src="assets/img/expand-icon.svg" alt="expand icon" />
-                    </button>
-                    <button onClick={onClose}>
-                        <img src="assets/img/close-icon.svg" alt="close icon" />
-                    </button>
-                </div>
-            </div>
+            <article className={`mail-compose ${isExpanded ? "expanded" : ""}`}>
 
-            <form className="flex column" onSubmit={onSave}>
-                <input autoFocus onChange={handleChange} value={to} id='to' type="text" name='to' placeholder="Recipients" />
-                <input onChange={handleChange} value={subject} id='subject' type="text" name='subject' placeholder="Subject" />
-                <textarea onChange={handleChange} value={body} id='body' name='body' ></textarea>
-                <div className="compose-footer flex align-center">
-                    <button type="submit">Send</button>
+                <div className="compose-header flex align-center space-between">
+                    <span>New Message</span>
+                    <div className="compose-actions">
+                        <button onClick={() => setIsExpanded(!isExpanded)}>
+                            <img src={`assets/img/expand-icon${isExpanded ? '-close' : ''}.svg`} alt="expand icon" />
+                        </button>
+                        <button onClick={onClose}>
+                            <img src="assets/img/close-icon.svg" alt="close icon" />
+                        </button>
+                    </div>
                 </div>
-            </form>
-        </article>
+
+                <form className="flex column" onSubmit={onSave}>
+                    <input autoFocus onChange={handleChange} value={to} id='to' type="text" name='to' placeholder="Recipients" />
+                    <input onChange={handleChange} value={subject} id='subject' type="text" name='subject' placeholder="Subject" />
+                    <textarea onChange={handleChange} value={body} id='body' name='body' ></textarea>
+                    <div className="compose-footer flex align-center">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </article>
     )
 }
