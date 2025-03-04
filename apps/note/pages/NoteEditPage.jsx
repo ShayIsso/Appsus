@@ -84,7 +84,7 @@ export function NoteEditPage() {
             <KeepNav />
 
             <Link to="/note" >
-                {<div className="dark-screen" ></div>}
+                {<div className="dark-screen-app" ></div>}
             </Link>
 
             <div className="edit-container edit-layout">

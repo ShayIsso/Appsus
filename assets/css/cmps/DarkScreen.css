@@ -1,4 +1,4 @@
-.dark-screen-all {
+.dark-screen {
   position: fixed;
   opacity: 0;
   z-index: 20;
@@ -15,14 +15,13 @@
   transition: opacity 0.5s ease-in-out;
 }
 
-.dark-screen {
+.dark-screen-app {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.075);
-  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.512);
   display: flex;
   justify-content: center;
   align-items: center;
