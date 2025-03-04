@@ -1,8 +1,7 @@
 .drop-menu {
   z-index: 5030;
   position: absolute;
-  bottom: -112px;
-  right: -65px;
+  bottom: 10%;
 
   padding: 6px 0;
   border-radius: 4px;

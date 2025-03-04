@@ -1,5 +1,4 @@
 .note-preview {
-  position: relative;
   border: 0.8px solid var(--note-border);
   border-radius: 8px;
   width: 100%;

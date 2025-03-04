@@ -10,6 +10,19 @@ export function NotePreview({ note, onRemoveNote }) {
     const [isDropMenu, setIsDropMenu] = useState(false)
     const dropContainer = useRef(null)
 
+    const options = [
+        {
+            name: 'Delete',
+            id: 1,
+            function: () => onRemoveNote(note.id)
+
+        },
+        {
+            name: 'test',
+            id: 2,
+        }
+    ]
+
     useEffect(() => {
         const handleClickOutside = (ev) => {
             if (dropContainer.current && !dropContainer.current.contains(ev.target)) {
@@ -35,7 +48,7 @@ export function NotePreview({ note, onRemoveNote }) {
 
             <NoteActionBtns onDropMenu={() => setIsDropMenu(!isDropMenu)} />
 
-            {isDropMenu && <div ref={dropContainer}><DropMenu noteId={note.id} onRemoveNote={onRemoveNote} /> </div>}
+            {isDropMenu && <div ref={dropContainer}><DropMenu options={options} /> </div>}
         </section>
     )
 }
