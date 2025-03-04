@@ -3,6 +3,7 @@
     font-family: 'Roboto', sans-serif;
     border-radius: 1rem;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .mail-details .back-btn {
