@@ -1,13 +1,13 @@
 
 
-export function DropMenu({ onRemoveNote, noteId }) {
+export function DropMenu({ options }) {
 
     return (
         <div className="drop-menu flex column">
-            <div onClick={() => onRemoveNote(noteId)}>Delete Note</div>
-            <div>Delete Note</div>
-            <div>Add label</div>
-            <div>Share in Email</div>
+            {options.map(option =>
+                <div key={option.id} onClick={option.function}>{option.name}</div>
+            )}
+
         </div>
     )
 

@@ -13,8 +13,20 @@ export function NoteEditPage() {
     const navigate = useNavigate()
     const { noteId } = useParams()
 
+    const txtRef = useRef(null)
+
+
+
+
+
+
     useEffect(() => {
         if (noteId) loadNote()
+        else (navigate('/note'))
+
+        if (txtRef.current) {
+            txtRef.current.focus()
+        }
 
     }, [])
 
@@ -28,7 +40,7 @@ export function NoteEditPage() {
     function onSaveNote(ev) {
         ev.preventDefault()
 
-        if (!noteToEdit.info.title.trim() && !noteToEdit.info.txt.trim()) return setIsEdit()
+        if (!noteToEdit.info.title.trim() && !noteToEdit.info.txt.trim()) return navigate('/note')
 
         noteService.save(noteToEdit)
             .then(savedNote => {
@@ -42,10 +54,29 @@ export function NoteEditPage() {
         const field = target.name
         let value = target.value
 
+        if (field === 'txt') {
+            target.style.height = 'auto'
+            target.style.height = target.scrollHeight + "px";
+        }
+
+
         setNoteToEdit(prevNote => ({ ...prevNote, info: { ...prevNote.info, [field]: value } }))
     }
 
     const { title, txt } = noteToEdit.info
+
+    const options = [{
+        name: 'Delete',
+        id: 1,
+        function: () => onRemove()
+    }]
+
+    function onRemove() {
+        noteService.remove(noteId).then(() =>
+            navigate('/note')
+        )
+
+    }
 
     return (
         <section className="note-reset main-layout">
@@ -53,7 +84,7 @@ export function NoteEditPage() {
             <KeepNav />
 
             <Link to="/note" >
-                <div className="dark-screen" style={{ opacity: 1 }}></div>
+                {<div className="dark-screen-app" ></div>}
             </Link>
 
             <div className="edit-container edit-layout">
@@ -69,6 +100,7 @@ export function NoteEditPage() {
                             id="title" />
 
                         <textarea
+                            ref={txtRef}
                             className='txt'
                             placeholder='Take a note...'
                             onChange={handleChange}
@@ -78,7 +110,7 @@ export function NoteEditPage() {
                         ></textarea>
 
                         <section className="flex">
-                            <NoteActionBtns />
+                            <NoteActionBtns options={options} />
                             <button className="close-btn" type="submit">Close</button>
                         </section>
                     </form>

@@ -5,6 +5,7 @@
 body {
   margin: 0;
   font-family: SF, sans-serif;
+  overflow-x: hidden;
 }
 
 h1,
@@ -42,6 +43,6 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit;
-    font-size: inherit;
+  font-family: inherit;
+  font-size: inherit;
 }
