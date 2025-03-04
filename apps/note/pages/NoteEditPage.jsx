@@ -8,13 +8,21 @@ const { useState, useEffect, useRef } = React
 import { NoteActionBtns } from "../cmps/NoteActionBtns.jsx";
 
 export function NoteEditPage() {
-
-    const [noteToEdit, setNoteToEdit] = useState(noteService.getEmptyNote())
     const navigate = useNavigate()
     const { noteId } = useParams()
 
+    const [noteToEdit, setNoteToEdit] = useState(noteService.getEmptyNote())
+    const [backgroundColor, setBackgroundColor] = useState(null)
+
+
+
+
     const txtRef = useRef(null)
 
+    function onSelectColor(color) {
+        setBackgroundColor(color)
+        setNoteToEdit(prevNote => ({ ...prevNote, style: { backgroundColor: color } }))
+    }
 
 
 
@@ -32,7 +40,10 @@ export function NoteEditPage() {
 
     function loadNote() {
         noteService.get(noteId)
-            .then(setNoteToEdit)
+            .then(note => {
+                setNoteToEdit(note)
+                setBackgroundColor(note.style.backgroundColor)
+            })
             .catch(err => console.log('err:', err))
     }
 
@@ -87,7 +98,7 @@ export function NoteEditPage() {
                 {<div className="dark-screen-app" ></div>}
             </Link>
 
-            <div className="edit-container edit-layout">
+            <div style={{ backgroundColor: backgroundColor }} className="edit-container edit-layout">
                 <section className="note-edit">
                     <form onSubmit={onSaveNote}>
 
@@ -110,7 +121,7 @@ export function NoteEditPage() {
                         ></textarea>
 
                         <section className="flex">
-                            <NoteActionBtns options={options} />
+                            <NoteActionBtns currColor={backgroundColor} onSelect={onSelectColor} options={options} />
                             <button className="close-btn" type="submit">Close</button>
                         </section>
                     </form>

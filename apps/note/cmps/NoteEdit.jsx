@@ -3,13 +3,24 @@ const { useState, useEffect, useRef } = React
 import { noteService } from "../services/note.service.js";
 import { NoteActionBtns } from "./NoteActionBtns.jsx";
 
-
-//לעשות שהטקסט ישאר באותו פורמט
-
 export function NoteEdit({ onAddNote, setIsEdit }) {
 
     const [noteToEdit, setNoteToEdit] = useState(noteService.getEmptyNote())
+    const [backgroundColor, setBackgroundColor] = useState('white')
+
     const txtRef = useRef(null)
+    const formRef = useRef(null)
+
+    function onSelectColor(color) {
+        setBackgroundColor(color)
+        setNoteToEdit(prevNote => ({ ...prevNote, style: { backgroundColor: color } }))
+    }
+
+    const handleBlur = (ev) => {
+        if (formRef.current && !formRef.current.contains(ev.relatedTarget)) {
+            onSaveNote(ev);
+        }
+    };
 
     useEffect(() => {
         if (txtRef.current) {
@@ -47,8 +58,8 @@ export function NoteEdit({ onAddNote, setIsEdit }) {
     const { title, txt } = noteToEdit.info
 
     return (
-        <section onBlur={onSaveNote} className="note-edit">
-            <form onSubmit={onSaveNote} >
+        <section style={{ backgroundColor: backgroundColor }} className="note-edit" >
+            <form ref={formRef} onBlur={handleBlur} onSubmit={onSaveNote} >
 
                 <input
                     placeholder='Title'
@@ -70,7 +81,7 @@ export function NoteEdit({ onAddNote, setIsEdit }) {
                 ></textarea>
 
                 <section className="flex">
-                    <NoteActionBtns />
+                    <NoteActionBtns currColor={backgroundColor} onSelect={onSelectColor} />
                     <button className="close-btn" type="submit">Close</button>
                 </section>
             </form>

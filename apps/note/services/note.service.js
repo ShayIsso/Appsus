@@ -12,14 +12,25 @@ export const noteService = {
   save,
 }
 
+function getRandomNoteColor() {
+  const colors = [
+    '#FFCCBC',
+    '#FFF9C4',
+    '#C8E6C9',
+    '#B3E5FC',
+    '#D1C4E9',
+    '#F5E0B2',
+    '#FFFFFF',
+  ]
+  return colors[utilService.getRandomIntInclusive(0, colors.length)]
+}
+
 function query() {
   return storageService.query(NOTE_KEY)
 }
 
 function get(noteId) {
-  const res = storageService.get(NOTE_KEY, noteId)
-  console.log(' res:', res)
-  return res
+  return storageService.get(NOTE_KEY, noteId)
 }
 
 function remove(noteId) {
@@ -57,13 +68,13 @@ function _createNote(title, txt) {
   return note
 }
 
-function getEmptyNote(title = '', txt = '') {
+function getEmptyNote(title = '', txt = '', backgroundColor = 'white') {
   const note = {
     createdAt: Date.now() - 2000,
     type: 'txt',
     isPinned: false,
     style: {
-      backgroundColor: utilService.getRandomColor(),
+      backgroundColor,
     },
     info: {
       title,
