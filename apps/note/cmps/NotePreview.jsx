@@ -1,14 +1,10 @@
 const { Link } = ReactRouterDOM
 import { NoteActionBtns } from './NoteActionBtns.jsx'
-import { DropMenu } from './DropMenu.jsx'
 
-const { useState, useRef, useEffect } = React
 
 
 export function NotePreview({ note, onRemoveNote }) {
 
-    const [isDropMenu, setIsDropMenu] = useState(false)
-    const dropContainer = useRef(null)
 
     const options = [
         {
@@ -23,18 +19,7 @@ export function NotePreview({ note, onRemoveNote }) {
         }
     ]
 
-    useEffect(() => {
-        const handleClickOutside = (ev) => {
-            if (dropContainer.current && !dropContainer.current.contains(ev.target)) {
-                setIsDropMenu(false);
-            }
-        };
 
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
 
     const { title, txt } = note.info
     return (
@@ -46,9 +31,8 @@ export function NotePreview({ note, onRemoveNote }) {
                 <p>{txt}</p>
             </Link>
 
-            <NoteActionBtns onDropMenu={() => setIsDropMenu(!isDropMenu)} />
+            <NoteActionBtns options={options} />
 
-            {isDropMenu && <div ref={dropContainer}><DropMenu options={options} /> </div>}
         </section>
     )
 }

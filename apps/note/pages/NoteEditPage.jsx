@@ -15,6 +15,7 @@ export function NoteEditPage() {
 
     useEffect(() => {
         if (noteId) loadNote()
+        else (navigate('/note'))
 
     }, [])
 
@@ -47,6 +48,19 @@ export function NoteEditPage() {
 
     const { title, txt } = noteToEdit.info
 
+    const options = [{
+        name: 'Delete',
+        id: 1,
+        function: () => onRemove()
+    }]
+
+    function onRemove() {
+        noteService.remove(noteId).then(() =>
+            navigate('/note')
+        )
+
+    }
+
     return (
         <section className="note-reset main-layout">
             <KeepHeader />
@@ -78,7 +92,7 @@ export function NoteEditPage() {
                         ></textarea>
 
                         <section className="flex">
-                            <NoteActionBtns />
+                            <NoteActionBtns options={options} />
                             <button className="close-btn" type="submit">Close</button>
                         </section>
                     </form>
