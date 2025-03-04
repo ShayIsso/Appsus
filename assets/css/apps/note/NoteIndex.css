@@ -1,7 +1,11 @@
 .note-index {
   position: relative;
+}
+
+.note-reset {
   background-color: #fff;
   color: rgb(32, 33, 36);
+  outline-color: #202124;
   direction: ltr;
   font-family: 'Roboto', arial, sans-serif;
   font-size: 15px;
@@ -10,25 +14,54 @@
   padding: 0;
 }
 
-.note-index button {
+.note-reset button {
   padding: 6px;
   margin: 0;
   transition: 0.2s ease;
 }
 
-.note-index button:hover {
+.note-reset button:hover {
   background-color: var(--btn-h-bg);
-
+  cursor: pointer;
   border-radius: 50%;
 }
 
-.note-index button:hover svg {
+.note-reset button:hover svg {
   fill: black;
 }
 
-.note-index li,
+.note-reset li,
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+}
+
+.note-reset input {
+  all: unset;
+}
+
+.note-reset textarea {
+  all: unset;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  resize: none;
+  min-height: 20px;
+  max-height: 300px;
+  height: max-content;
+  overflow-y: hidden; /* מונע גלילה פנימית */
+  resize: none;
+}
+
+input,
+textarea,
+select,
+button {
+  all: unset;
+  box-sizing: border-box;
+  appearance: none;
 }

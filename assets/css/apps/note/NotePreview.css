@@ -19,6 +19,7 @@
   letter-spacing: 0;
   line-height: 1.5rem;
   width: 85%;
+  overflow-wrap: break-word;
 }
 
 .note-preview button {
