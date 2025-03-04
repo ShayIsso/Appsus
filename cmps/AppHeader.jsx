@@ -24,9 +24,9 @@ export function AppHeader() {
             </div>
         </Link>
 
-<DarkScreen toggleMenu={toggleMenu}  />
-<MainNav toggleMenu={toggleMenu} />
-<button className="main-nav-btn" onClick={toggleMenu}>☰</button>
+        <DarkScreen toggleMenu={toggleMenu} />
+        <MainNav toggleMenu={toggleMenu} />
+        <button className="main-nav-btn" onClick={toggleMenu}>☰</button>
 
     </header>
 }
