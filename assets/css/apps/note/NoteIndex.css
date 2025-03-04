@@ -57,7 +57,7 @@ ul {
   resize: none;
 }
 
-input,
+.note-reset input,
 textarea,
 select,
 button {
