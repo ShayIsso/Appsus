@@ -7,7 +7,7 @@ export function DropMenu({ onRemoveNote, noteId }) {
             <div onClick={() => onRemoveNote(noteId)}>Delete Note</div>
             <div>Delete Note</div>
             <div>Add label</div>
-            <div>Share in     Email</div>
+            <div>Share in Email</div>
         </div>
     )
 

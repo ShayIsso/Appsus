@@ -53,7 +53,7 @@ ul {
   min-height: 20px;
   max-height: 300px;
   height: max-content;
-  overflow-y: hidden; /* מונע גלילה פנימית */
+  overflow-y: hidden;
   resize: none;
 }
 
@@ -61,7 +61,7 @@ ul {
 textarea,
 select,
 button {
-  /* all: unset; */
+  all: unset;
   box-sizing: border-box;
   appearance: none;
 }
