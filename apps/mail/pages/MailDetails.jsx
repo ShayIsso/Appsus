@@ -39,9 +39,15 @@ export function MailDetails() {
             <div className="app-content-container">
                 <SideBar />
                 <section className="mail-details">
-                    <button className="back-btn flex align-center" onClick={goBack}>
-                        <span>←</span> <span>Back</span>
-                    </button>
+                    <div className="action-btns flex align-center">
+                        <button className="back-btn flex align-center mail-action-wrap" onClick={goBack}>
+                            <img src="assets/img/arrow-back-icon.svg" alt="back icon" />
+                        </button>
+
+                        <button className="back-btn flex align-center mail-action-wrap">
+                            <img src="assets/img/delete-icon.svg" alt="trash icon" />
+                        </button>
+                    </div>
 
                     <h1 className="mail-subject">{subject}</h1>
 

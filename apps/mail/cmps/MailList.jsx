@@ -1,11 +1,11 @@
 import { MailPreview } from "./MailPreview.jsx";
 
-export function MailList({ mails, onRemoveMail, onMailClick, onToggleStarred }) {
+export function MailList({ mails, onMailClick, onToggleStarred }) {
     return (
         <table className="mail-list">
             <tbody>
                 {mails.map(mail =>
-                    <MailPreview key={mail.id} mail={mail} onRemoveMail={onRemoveMail} onMailClick={onMailClick}  onToggleStarred={onToggleStarred}/>)
+                    <MailPreview key={mail.id} mail={mail} onMailClick={onMailClick}  onToggleStarred={onToggleStarred}/>)
                 }
             </tbody>
         </table>
