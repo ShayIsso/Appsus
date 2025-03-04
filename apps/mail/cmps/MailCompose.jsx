@@ -37,8 +37,9 @@ export function MailCompose({ onClose }) {
 
 
     return (
+        <React.Fragment >
+            {isExpanded && <div className="dark-screen-app" onClick={onClose}></div>}
             <article className={`mail-compose ${isExpanded ? "expanded" : ""}`}>
-
                 <div className="compose-header flex align-center space-between">
                     <span>New Message</span>
                     <div className="compose-actions">
@@ -60,5 +61,6 @@ export function MailCompose({ onClose }) {
                     </div>
                 </form>
             </article>
+        </React.Fragment>
     )
 }

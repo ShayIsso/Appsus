@@ -8,7 +8,10 @@
     background-color: var(--mail-bg1);
     transition: width 0.25s ease;
     overflow: hidden;
-    z-index: 10;
+}
+
+.sidebar:hover {
+    z-index: 1;
 }
 
 .sidebar.open {

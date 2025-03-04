@@ -1,6 +1,8 @@
 export function MailPreview({ mail, onMailClick, onToggleStarred }) {
 
     const { subject, from, body, isStarred } = mail
+    const senderName = from.split('@')[0]
+
     return (
         <tr className="mail-preview-row flex" onClick={() => onMailClick(mail.id)}>
             <td className="mail-preview-select">
@@ -28,7 +30,7 @@ export function MailPreview({ mail, onMailClick, onToggleStarred }) {
                     </span>
                 </button>
             </td>
-            <td className="mail-preview-sender flex align-center">{from}</td>
+            <td className="mail-preview-sender flex align-center">{senderName}</td>
             <td className="mail-preview-content flex align-center">
                 <div className="mail-info flex align-center">
                     <div className="mail-subject-container">
