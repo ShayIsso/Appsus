@@ -54,15 +54,7 @@ export function MailIndex() {
 
     if (!mails) return <div>Loading...</div>
     return (
-        <section className="mail-container">
-            <MailHeader onMenuClick={toggleSidebar} />
-            <div className={`app-content-container flex ${isSidebarOpen ? '' : 'with-margin'}`}>
-                <SideBar onComposeClick={() => setShowCompose(true)} isOpen={isSidebarOpen}  />
-                <MailList mails={mails} onMailClick={mailClick} onToggleStarred={toggleStarred} />
-                {showCompose && <MailCompose onClose={() => setShowCompose(false)} />}
-            </div>
-        </section>
-
+        <MailList mails={mails} onMailClick={mailClick} onToggleStarred={toggleStarred} />
     )
 }
 

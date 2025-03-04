@@ -46,36 +46,30 @@ export function MailDetails() {
     const senderName = from.split('@')[0]
 
     return (
-        <section className="mail-container">
-            <MailHeader />
-            <div className="app-content-container">
-                <SideBar />
-                <section className="mail-details">
-                    <div className="action-btns flex align-center">
-                        <button className="back-btn flex align-center mail-action-wrap" onClick={goBack}>
-                            <img src="assets/img/arrow-back-icon.svg" alt="back icon" />
-                        </button>
+        <section className="mail-details">
+            <div className="action-btns flex align-center">
+                <button className="back-btn flex align-center mail-action-wrap" onClick={goBack}>
+                    <img src="assets/img/arrow-back-icon.svg" alt="back icon" />
+                </button>
 
-                        <button className="back-btn flex align-center mail-action-wrap" onClick={removeMail}>
-                            <img src="assets/img/delete-icon.svg" alt="trash icon" />
-                        </button>
-                    </div>
-
-                    <h1 className="mail-subject">{subject}</h1>
-
-                    <div className="sender-row flex align-center space-between">
-                        <div className="sender-info flex align-center">
-                            <span className="sender-name">{senderName}</span>
-                            <span className="sender-email">&lt;{from}&gt;</span>
-                        </div>
-                        <div className="mail-date">{formattedDate}</div>
-                    </div>
-
-                    <div className="recipient-info">to: {to}</div>
-
-                    <div className="mail-content">{body}</div>
-                </section>
+                <button className="back-btn flex align-center mail-action-wrap" onClick={removeMail}>
+                    <img src="assets/img/delete-icon.svg" alt="trash icon" />
+                </button>
             </div>
+
+            <h1 className="mail-subject">{subject}</h1>
+
+            <div className="sender-row flex align-center space-between">
+                <div className="sender-info flex align-center">
+                    <span className="sender-name">{senderName}</span>
+                    <span className="sender-email">&lt;{from}&gt;</span>
+                </div>
+                <div className="mail-date">{formattedDate}</div>
+            </div>
+
+            <div className="recipient-info">to: {to}</div>
+
+            <div className="mail-content">{body}</div>
         </section>
     )
 }
