@@ -2,5 +2,5 @@
 
 export function DarkScreen({ toggleMenu }) {
 
-    return <div onClick={toggleMenu} className="dark-screen"></div>
+    return <div onClick={toggleMenu} className="dark-screen-all"></div>
 }

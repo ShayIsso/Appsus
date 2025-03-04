@@ -1,3 +1,6 @@
+.main-nav {
+  overflow: hidden;
+}
 .main-nav a {
   color: var(--gray3);
   margin: 0.5em;
