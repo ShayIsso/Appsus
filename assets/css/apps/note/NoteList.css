@@ -29,4 +29,10 @@
   margin-top: 2px;
   gap: 0.9em;
   padding-right: 16px;
+  height: fit-content;
+  align-self: center;
+}
+
+.edit-button button {
+  padding: 6px;
 }
