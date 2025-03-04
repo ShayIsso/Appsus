@@ -1,11 +1,13 @@
- export function SideBar() {
+export function SideBar({ onComposeClick }) {
     return (
         <aside className="sidebar">
             <div className="sidebar-content flex">
                 {/* Compose button */}
                 <div className="compose-div">
-                    <div className="compose-container">
-                        <button className="compose-icon-btn flex align-center justify-center">
+                    <div className="compose-btn-container">
+                        <button
+                            onClick={onComposeClick}
+                            className="compose-icon-btn flex align-center justify-center">
                             <img src="assets/img/edit-icon.svg" alt="compose icon" />
                             <span className="compose-text">Compose</span>
                         </button>

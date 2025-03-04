@@ -62,7 +62,7 @@ const demoMails = [
         sentAt: 1672216000000,
         removedAt: null,
         from: 'security@google.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com' 
     }
 ]
 
@@ -73,6 +73,7 @@ export const mailService = {
     get,
     remove,
     save,
+    getEmptyMail
 }
 
 function query() {
@@ -96,6 +97,18 @@ function save(mail) {
     }
 }
 
+function getEmptyMail() {
+    return {
+        createdAt: Date.now(),
+        subject: '',
+        body: '',
+        isRead: null,
+        sentAt: null,
+        isStared: null,
+        from: 'shayisso@gmail.com',
+        to: ''
+    }
+}
 
 function _createMails() {
     let mails = utilService.loadFromStorage(MAIL_KEY)

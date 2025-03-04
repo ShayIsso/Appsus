@@ -1,6 +1,7 @@
 const { useEffect, useState } = React
 const { useNavigate } = ReactRouterDOM
 
+import { MailCompose } from "../cmps/MailCompose.jsx";
 import { MailHeader } from "../cmps/MailHeader.jsx";
 import { MailList } from "../cmps/MailList.jsx";
 import { SideBar } from "../cmps/SideBar.jsx";
@@ -9,6 +10,7 @@ import { mailService } from "../services/mail.service.js";
 export function MailIndex() {
     const [mails, setMails] = useState(null)
     const navigate = useNavigate()
+    const [showCompose, setShowCompose] = useState(false)
 
     useEffect(() => {
         mailService.query()
@@ -50,8 +52,9 @@ export function MailIndex() {
         <section className="mail-container">
             <MailHeader />
             <div className="app-content-container flex">
-                <SideBar />
-                <MailList mails={mails} onRemoveMail={removeMail} onMailClick={mailClick} onToggleStarred={toggleStarred} />
+                <SideBar onComposeClick={() => setShowCompose(true)} />
+                <MailList mails={mails} onMailClick={mailClick} onToggleStarred={toggleStarred} />
+                {showCompose && <MailCompose onClose={() => setShowCompose(false)} />}
             </div>
         </section>
 

@@ -28,6 +28,18 @@ export function MailDetails() {
         navigate('/mail')
     }
 
+    function removeMail() {
+        mailService.remove(mailId)
+            .then(() => {
+                navigate('/mail')
+                showSuccessMsg(`Mail (${mailId}) removed successfully!`)
+            })
+            .catch(err => {
+                console.log('Problems removing mail:', err)
+                showErrorMsg(`Having problems removing mail!`)
+            })
+    }
+
     if (!mail) return <div>Loading...</div>
     const { subject, from, to, sentAt, body } = mail
     const formattedDate = utilService.getFormatDate(sentAt)
@@ -44,7 +56,7 @@ export function MailDetails() {
                             <img src="assets/img/arrow-back-icon.svg" alt="back icon" />
                         </button>
 
-                        <button className="back-btn flex align-center mail-action-wrap">
+                        <button className="back-btn flex align-center mail-action-wrap" onClick={removeMail}>
                             <img src="assets/img/delete-icon.svg" alt="trash icon" />
                         </button>
                     </div>
