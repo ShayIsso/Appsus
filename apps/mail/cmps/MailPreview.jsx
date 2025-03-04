@@ -1,6 +1,6 @@
-export function MailPreview({ mail, onRemoveMail, onMailClick, onToggleStarred }) {
+export function MailPreview({ mail, onMailClick, onToggleStarred }) {
 
-    const { subject, from, to, body, isStarred } = mail
+    const { subject, from, body, isStarred } = mail
     return (
         <tr className="mail-preview-row flex" onClick={() => onMailClick(mail.id)}>
             <td className="mail-preview-select">
