@@ -10,23 +10,23 @@ export const noteService = {
   getEmptyNote,
   remove,
   save,
+  getFilterFromSearchParams,
 }
 
-function getRandomNoteColor() {
-  const colors = [
-    '#FFCCBC',
-    '#FFF9C4',
-    '#C8E6C9',
-    '#B3E5FC',
-    '#D1C4E9',
-    '#F5E0B2',
-    '#FFFFFF',
-  ]
-  return colors[utilService.getRandomIntInclusive(0, colors.length)]
+function getFilterFromSearchParams(searchParams) {
+  const text = searchParams.get('text') || ''
+
+  return { text }
 }
 
-function query() {
-  return storageService.query(NOTE_KEY)
+function query(filterBy = {}) {
+  return storageService.query(NOTE_KEY).then((notes) => {
+    if (filterBy.text) {
+      const regExp = new RegExp(filterBy.text, 'i')
+      notes = notes.filter((note) => regExp.test(note.info.txt))
+    }
+    return notes
+  })
 }
 
 function get(noteId) {
