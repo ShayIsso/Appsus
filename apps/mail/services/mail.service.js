@@ -72,7 +72,7 @@ const demoMails = [
         sentAt: 1672216000000,
         removedAt: null,
         from: 'security@google.com',
-        to: 'user@appsus.com' 
+        to: 'user@appsus.com'
     }
 ]
 
@@ -83,11 +83,20 @@ export const mailService = {
     get,
     remove,
     save,
-    getEmptyMail
+    getEmptyMail,
+    getDefaultFilter,
 }
 
-function query() {
+function query(filterBy) {
     return storageService.query(MAIL_KEY)
+        .then(mails => {
+            if (filterBy.txt) {
+                const regex = new RegExp(filterBy.txt, 'i')
+                mails = mails.filter(mail => regex.test(mail.subject) || regex.test(mail.body))
+            }
+
+            return mails
+        })
 }
 
 function get(mailId) {
@@ -95,7 +104,6 @@ function get(mailId) {
 }
 
 function remove(mailId) {
-    // return Promise.reject('Oh No!')
     return storageService.remove(MAIL_KEY, mailId)
 }
 
@@ -104,6 +112,16 @@ function save(mail) {
         return storageService.put(MAIL_KEY, mail)
     } else {
         return storageService.post(MAIL_KEY, mail)
+    }
+}
+
+function getDefaultFilter() {
+    return {
+        status: 'inbox',
+        txt: '',
+        isRead: '',
+        isStared: null,
+        lables: [],
     }
 }
 

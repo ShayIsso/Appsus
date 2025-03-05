@@ -1,4 +1,6 @@
-export function MailHeader({ onMenuClick }) {
+import { MailFilter } from "../cmps/MailFilter.jsx";
+
+export function MailHeader({ onMenuClick, filterBy, onSetFilterBy }) {
     return (
         <header className="mail-header flex">
             <section className="header-logo-section flex align-center">
@@ -7,19 +9,9 @@ export function MailHeader({ onMenuClick }) {
                 </div>
                 <img className="gmail-logo" src="assets/img/full_logo_gmail.png" alt="gmail logo" />
             </section>
-            <section className="search-container">
-                <div className="search-bar">
-                    <button className="search-icon-btn">
-                        <img src="assets/img/search-icon.svg" alt="search icon" />
-                    </button>
-                    <input className="search-input" type="text" placeholder="Search mail" aria-label="Search mail" spellCheck="false" autoComplete="off"/>
-                    <div className="search-tools">
-                        <button type="button" aria-label="Search options">
-                            <img src="assets/img/search-options.svg" alt="search options" />
-                        </button>
-                    </div>
-                </div>
-            </section>
+
+            <MailFilter filterBy={filterBy} onSetFilterBy={onSetFilterBy} />
+
             <div className="options-btns flex align-center">
                 <button className="help-icon-btn">
                     <img src="assets/img/help-icon.svg" alt="search icon" />
@@ -32,9 +24,9 @@ export function MailHeader({ onMenuClick }) {
                 <button className="gog-apps-btn">
                     <img src="assets/img/gog-apps.svg" alt="google apps" />
                 </button>
-                    <span className="user-img">
-                        <img src="assets/img/user-img.png" alt="user-img" />
-                    </span>
+                <span className="user-img">
+                    <img src="assets/img/user-img.png" alt="user-img" />
+                </span>
             </div>
         </header>
     )
