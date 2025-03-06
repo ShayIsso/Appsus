@@ -23,7 +23,10 @@ export function RootCmp() {
                     <Route path=":mailId" element={<MailDetails />} />
                 </Route>
                 <Route path="/note" element={<NoteIndex />} />
-                <Route path="/note/:noteId" element={<NoteEditPage />} />
+                <Route path="/trash" element={<NoteIndex />} />
+                <Route path="/archived" element={<NoteIndex />} />
+                <Route path="/note/edit/:noteId" element={<NoteEditPage />} />
+                <Route path="/note/edit" element={<NoteEditPage />} />
             </Routes>
             <UserMsg />
         </section>
