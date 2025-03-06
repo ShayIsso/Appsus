@@ -143,8 +143,8 @@
     display: none;
     margin-right: 1rem;
 }
-
-.sidebar.open .unread-count,
-.sidebar:hover .unread-count {
+  
+  .sidebar.open .unread-count,
+  .sidebar:hover .unread-count {
     display: block;
-}
+  }

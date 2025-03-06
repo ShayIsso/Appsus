@@ -2,8 +2,6 @@ const { useParams, Link, useNavigate } = ReactRouterDOM
 
 import { mailService } from "../services/mail.service.js";
 import { utilService } from '../../../services/util.service.js'
-import { MailHeader } from "../cmps/MailHeader.jsx"
-import { SideBar } from "../cmps/SideBar.jsx"
 
 const { useEffect, useState } = React
 
@@ -53,7 +51,7 @@ export function MailDetails() {
                 </button>
 
                 <button className="back-btn flex align-center mail-action-wrap" onClick={removeMail}>
-                    <img src="assets/img/delete-icon.svg" alt="trash icon" />
+                    <img src="assets/img/sidebar_icons/delete-icon.svg" alt="trash icon" />
                 </button>
             </div>
 

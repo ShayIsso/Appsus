@@ -48,11 +48,11 @@ export function MailPreview({ mail, onMailClick, onToggleStatus }) {
                     </span>
                 </button>
             </td>
-            <td className="mail-preview-sender flex align-center" style={{ fontWeight: isRead ? 'bold' : 'normal' }}>{senderName}</td>
+            <td className="mail-preview-sender flex align-center" style={{ fontWeight: !isRead ? 'bold' : 'normal' }}>{senderName}</td>
             <td className="mail-preview-content flex align-center">
                 <div className="mail-info flex align-center">
                     <div className="mail-subject-container">
-                        <span className="mail-subject" style={{ fontWeight: isRead ? 'bold' : 'normal' }}>{subject}</span>
+                        <span className="mail-subject" style={{ fontWeight: !isRead ? 'bold' : 'normal' }}>{subject}</span>
                     </div>
                     <span className="mail-body"><span> - </span>{body}</span>
                 </div>
@@ -63,5 +63,3 @@ export function MailPreview({ mail, onMailClick, onToggleStatus }) {
         </tr>
     )
 }
-
-{/* <td className="mail-preview-action" onClick={() => onRemoveMail(mail.id)}>X</td> */ }

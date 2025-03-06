@@ -5,7 +5,7 @@ import { MailList } from "../cmps/MailList.jsx";
 import { mailService } from "../services/mail.service.js";
 
 export function MailIndex() {
-    const { filterBy } = useOutletContext()
+    const { filterBy, onLoadUnreadCounts  } = useOutletContext()
     const [mails, setMails] = useState(null)
     const navigate = useNavigate()
 
@@ -38,13 +38,15 @@ export function MailIndex() {
     function toggleStatus(mailId, statusType) {
         setMails(prevMails =>
             prevMails.map(mail =>
-                mail.id === mailId ? { ...mail, [statusType]: !mail[statusType] } : mail
-            )
+                mail.id === mailId ? { ...mail, [statusType]: !mail[statusType] } : mail)
         )
 
         const currMail = mails.find(mail => mail.id === mailId)
 
         mailService.save({ ...currMail, [statusType]: !currMail[statusType] })
+            .then(() => {
+                onLoadUnreadCounts()
+            })
             .catch(error => console.error(`Failed to save mail status: ${statusType}`, error))
     }
 
