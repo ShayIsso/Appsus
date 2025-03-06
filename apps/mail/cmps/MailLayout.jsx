@@ -10,12 +10,12 @@ import { mailService } from '../services/mail.service.js';
 export function MailLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const [showCompose, setShowCompose] = useState(false)
-  const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter());
+  const [filterBy, setFilterBy] = useState(mailService.getDefaultFilter())
 
   const toggleSidebar = () => setIsSidebarOpen(prev => !prev)
 
   function onSetFilterBy(newFilter) {
-    setFilterBy(prevFilter => ({ ...prevFilter, ...newFilter }));
+    setFilterBy(prevFilter => ({ ...prevFilter, ...newFilter }))
   }
 
   return (

@@ -94,6 +94,13 @@ function query(filterBy) {
                 const regex = new RegExp(filterBy.txt, 'i')
                 mails = mails.filter(mail => regex.test(mail.subject) || regex.test(mail.body))
             }
+            if (filterBy.isRead !== '') {
+                mails = mails.filter(mail => mail.isRead === filterBy.isRead)
+            }
+
+            if (filterBy.status === 'star') {
+                mails = mails.filter(mail => mail.isStarred)
+            }
 
             return mails
         })

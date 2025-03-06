@@ -5,7 +5,7 @@ import { MailList } from "../cmps/MailList.jsx";
 import { mailService } from "../services/mail.service.js";
 
 export function MailIndex() {
-    const { filterBy, onSetFilterBy } = useOutletContext()
+    const { filterBy } = useOutletContext()
     const [mails, setMails] = useState(null)
     const navigate = useNavigate()
 
