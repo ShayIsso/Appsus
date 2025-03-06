@@ -1,20 +1,44 @@
 .keep-nav {
   grid-area: nav;
   place-items: start;
-
   padding-top: 8px;
+  height: 100%;
+  display: inline;
 }
 
-.keep-nav button {
-  width: 100%;
+.keep-nav:hover {
+  width: 240px;
+}
+
+.keep-nav .open {
+  width: 240px;
+
+  margin-left: 0px;
   padding: 12px 12px 12px 24px;
+  border-radius: 0 25px 25px 0;
 }
 
-.keep-nav button:active {
+.keep-nav:hover a {
+  width: 100%;
+  margin-left: 0px;
+  padding: 12px 12px 12px 24px;
+  border-radius: 0 25px 25px 0;
+}
+
+.keep-nav a {
+  position: relative;
+  display: flex;
+  padding: 12px 12px 12px 12px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.keep-nav a.active {
   background-color: var(--nav-active);
 }
 
-.keep-nav button:hover {
+.keep-nav a:hover {
+  background-color: #f1f3f4;
   border-radius: 0 25px 25px 0;
 }
 

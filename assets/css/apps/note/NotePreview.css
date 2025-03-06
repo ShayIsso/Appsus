@@ -5,6 +5,8 @@
   width: 100%;
   height: max-content;
   transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 1em;
+  break-inside: avoid;
 }
 
 .note-preview:hover {
@@ -16,8 +18,9 @@
   display: block;
   width: 78%;
 
+  white-space: pre-wrap;
+
   font-family: 'Google Sans', Roboto, Arial, sans-serif;
-  font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.5rem;
@@ -26,6 +29,17 @@
   overflow: hidden;
 
   padding: 12px 16px;
+}
+
+.note-preview .title {
+  width: 78%;
+
+  letter-spacing: 0.00625em;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.5rem;
+  padding: 12px 16px 0px;
 }
 
 .note-preview button {
@@ -41,4 +55,23 @@
   position: absolute;
   top: 6px;
   right: 12px;
+}
+
+.n-pin-btn svg {
+  fill: none; /* ללא מילוי */
+  stroke: #757575; /* צבע הקווים */
+  stroke-width: 50; /* עובי קווים */
+  transition: fill 0.3s ease;
+}
+
+.n-pin-btn:hover svg {
+  fill: none; /* ללא מילוי */
+  stroke: #757575; /* צבע הקווים */
+  stroke-width: 50; /* עובי קווים */
+  transition: fill 0.3s ease;
+}
+
+.n-pin-btn.pinned svg {
+  fill: var(--gog-ylo); /* מילוי צהוב כשההערה מוצמדת */
+  stroke: none;
 }
