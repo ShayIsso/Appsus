@@ -1,20 +1,111 @@
 .keep-nav {
   grid-area: nav;
   place-items: start;
-
   padding-top: 8px;
+  height: 100%;
+  width: max-content;
 }
 
-.keep-nav button {
+.keep-nav:hover {
+  width: 240px;
+  place-items: start;
+  padding-top: 8px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.keep-nav:hover a {
   width: 100%;
+  margin-left: 0px;
   padding: 12px 12px 12px 24px;
+  border-radius: 0 25px 25px 0;
+}
+.keep-nav .Notes::before {
+  z-index: 59;
+  content: 'Notes';
+  display: block;
+  width: 100%;
+  height: 0;
+  letter-spacing: 0.0178571429em;
+  font-family: Product Sans, Roboto, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 550;
+  line-height: 1.55rem;
+  margin: 0 0 0 20px;
+
+  position: absolute;
+  left: 20%;
+  top: 24%;
+  transform: translateY(-50%);
+  opacity: 0;
 }
 
-.keep-nav button:active {
+.keep-nav:hover .Notes::before {
+  opacity: 1;
+}
+
+.keep-nav .Archive::before {
+  z-index: 59;
+  content: 'Archive';
+  display: block;
+  width: 100%;
+  height: 0;
+  letter-spacing: 0.0178571429em;
+  font-family: Product Sans, Roboto, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 550;
+  line-height: 1.55rem;
+  margin: 0 0 0 20px;
+
+  position: absolute;
+  left: 20%;
+  top: 24%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.keep-nav:hover .Archive::before {
+  opacity: 1;
+}
+
+.keep-nav .Trash::before {
+  z-index: 59;
+  content: 'Trash';
+  display: block;
+  width: 100%;
+  height: 0;
+  letter-spacing: 0.0178571429em;
+  font-family: Product Sans, Roboto, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 550;
+  line-height: 1.55rem;
+  margin: 0 0 0 20px;
+
+  position: absolute;
+  left: 20%;
+  top: 24%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.keep-nav:hover .Trash::before {
+  opacity: 1;
+}
+
+.keep-nav a {
+  position: relative;
+  display: flex;
+  padding: 12px 12px 12px 12px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.keep-nav a.active {
   background-color: var(--nav-active);
 }
 
-.keep-nav button:hover {
+.keep-nav a:hover {
+  background-color: #f1f3f4;
   border-radius: 0 25px 25px 0;
 }
 

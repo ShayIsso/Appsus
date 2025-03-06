@@ -1,4 +1,6 @@
 const { useState } = React
+import { noteService } from '../services/note.service.js'
+
 
 const colors = [
     "#FFCCBC",
@@ -10,12 +12,13 @@ const colors = [
     "#FFFFFF",
 ]
 
-export function ColorPicker({ onSelect, currColor }) {
-    const [selectedColor, setSelectedColor] = useState(currColor);
+export function ColorPicker({ note, callBack }) {
+    const [selectedColor, setSelectedColor] = useState(note.style.backgroundColor);
+
 
     const handleSelect = (color) => {
-        setSelectedColor(color);
-        if (onSelect) onSelect(color);
+        setSelectedColor(color)
+        { callBack(note.id, color) || callBack(color) }
     };
 
     return (
@@ -30,7 +33,6 @@ export function ColorPicker({ onSelect, currColor }) {
                     }}
                     onClick={() => handleSelect(color)}
                 >
-                    {/* {selectedColor === color && <span className="checkmark">✔</span>} */}
                 </div>
             ))}
         </div>

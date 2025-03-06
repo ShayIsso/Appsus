@@ -1,0 +1,65 @@
+.todos li {
+  display: flex;
+  align-items: center;
+  padding: 4px 0px 4px 4px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.todos li:last-child {
+  border-bottom: none;
+}
+
+.todos li::before {
+  content: '☐'; /* ריבוע לא מסומן */
+  font-size: 20px;
+  margin-right: 5px;
+  transition: all 0.3s ease;
+}
+
+.todos li.done {
+  color: #757575;
+  text-decoration: line-through;
+}
+
+.todos li.done::before {
+  content: '☑'; /* ריבוע מסומן */
+}
+
+.todo-item {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  font-size: 16px;
+  padding: 5px 10%;
+}
+
+.todo-item input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-item input[type='text'] {
+  border: none;
+  background: none;
+  font-size: 16px;
+  outline: none;
+  flex-grow: 1;
+}
+
+.todo-item input[type='text']:focus {
+  border-bottom: 1px solid black;
+}
+
+.todos-container button:hover {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.todo-item input[type='checkbox']:checked + input[type='text'] {
+  text-decoration: line-through;
+  color: gray;
+}
