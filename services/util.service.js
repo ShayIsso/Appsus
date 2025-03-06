@@ -5,6 +5,7 @@ export const utilService = {
   getRandomColor,
   padNum,
   getDayName,
+  getDayNumber,
   getMonthName,
   getFormatDate,
   loadFromStorage,
