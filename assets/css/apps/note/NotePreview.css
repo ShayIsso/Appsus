@@ -5,6 +5,8 @@
   width: 100%;
   height: max-content;
   transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 1em;
+  break-inside: avoid;
 }
 
 .note-preview:hover {

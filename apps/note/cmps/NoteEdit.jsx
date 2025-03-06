@@ -23,7 +23,7 @@ export function NoteEdit({ type, callBack, setIsEdit }) {
     }
 
     callBack.handleColor = (color) => {
-        setNoteToEdit(prevNote => ({ ...prevNote, style: { ...prevNote.style, backgroundColor: color } }))
+        setNoteToEdit(prevNote => ({ ...prevNote, style: { backgroundColor: color } }))
     }
 
     useEffect(() => {
@@ -137,14 +137,12 @@ export function NoteEdit({ type, callBack, setIsEdit }) {
     return (
         <section style={{ backgroundColor: noteToEdit.style.backgroundColor || 'white' }} className="note-edit" >
 
-            {/* תצוגה מקדימה של תמונה או וידאו */}
             {url && type === 'img' && <img src={url} alt="Preview" style={{ width: '100%', height: 'auto' }} />}
             {videoUrl && type === 'video' && (
                 <video controls style={{ width: '100%', height: 'auto' }}>
                     <source src={videoUrl} type="video/mp4" />
                     <source src={videoUrl} type="video/webm" />
                     <source src={videoUrl} type="video/ogg" />
-                    Your browser does not support the video tag.
                 </video>
             )}
 

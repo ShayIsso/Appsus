@@ -10,11 +10,12 @@
 }
 
 .note-list {
-  justify-self: start;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 238.4px);
-  gap: 20px;
+  column-width: 234px;
+  column-gap: 20px;
+  column-fill: balance;
   margin-top: 2.5em;
+  padding: 10px;
+  height: 100%;
 }
 
 .note-list {
