@@ -115,5 +115,5 @@ You can see this in the commit history on GitHub:
 
 ## ✨ Credits
 
-Made with ❤️ as part of the **Coding Academy** React Sprint  
+Made as part of the **Coding Academy** React Sprint  
 Check out my work: [ShayIsso](https://github.com/ShayIsso)
